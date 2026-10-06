@@ -1,6 +1,8 @@
 # Meaning-preserving input representations
 
-Status: proposed design; an automatic semantic organizer has not been implemented.
+Status: the [v1 controlled-segment encoder and transport interface](USAGE.md)
+are implemented. Automatic organization of arbitrary prose remains a research
+goal. See the [frozen protocol](AVL_V1_PROTOCOL.md) for actual scope.
 
 The purpose of the input layer is to help the model distinguish and use meaning. A cleaner summary or a JSON object alone does not establish understanding.
 

@@ -1,0 +1,22 @@
+{
+  "format": "avl-semantic-study-v1",
+  "smoke_only": false,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps": 1500,
+  "batch_size": 128,
+  "learning_rate": 0.003,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "threads": 2,
+  "max_seconds": 1800,
+  "optimizer": "AdamW",
+  "objective": "all_nine_fields_cross_entropy",
+  "checkpoint": "final",
+  "evaluation_batch_size": 128,
+  "dtype": "float32",
+  "parameters": 98511
+}

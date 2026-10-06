@@ -2,51 +2,51 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
-AVL explores learned vector communication that preserves useful meaning between AI units. Its long-term goal is to let shared neural units use communicated information across multiple tasks, with explicit checks for semantic retention and resource cost.
+AVL researches learned vector communication that preserves meaning between AI units. The long-term goal is a useful AI communication language; this release provides a runnable, bounded experiment.
 
-**Status: an early research prototype.** The current model has 98,928 shared parameters and 16-dimensional float32 messages. It can encode local English text, exchange vectors, and generate characters. The first YES/NO experiment did **not** learn to use remote facts: every input produced `YES`, with 50% accuracy. A useful general-purpose language, lossless compression, and intelligence gains from adding units have not been demonstrated.
-
-## Included
-
-- A shared local encoder, sender, message attention, state updater, and character decoder.
-- Synchronous communication, blocked communication, and matched serial controls.
-- Twelve focused tests, a reproducible fixed-budget smoke runner, and its checkpoint/source snapshots.
-- A long-input payload probe with original synthetic texts, actual vectors, and raw payload bytes.
-- [Semantic input design](docs/SEMANTIC_INPUT.md), [body design](docs/research/2026-10-05-english-connected-body.md), [smoke results](docs/research/2026-10-05-english-body-results.md), and [long-input measurements](docs/research/2026-10-06-long-vector-size.md).
-
-`antlab` is the historical Python module name retained so published source hashes and checkpoint verification continue to work. AVL is the project name. The wider ACT experiments are outside this repository.
+**Status: v1 research prototype.** A 98,511-parameter model encodes one controlled English segment into a 16-dimensional float32 vector and predicts nine meaning fields from that vector alone. Ordered multi-segment packets, unsupported-input handling, three trained checkpoints and replayable evaluations are included. **The preregistered study failed: unseen phrasing remains unreliable.** General English understanding and lossless semantic compression have not been demonstrated. See the [measured results](docs/AVL_V1_RESULTS.md).
 
 ## Run
 
-Use Python 3.10 or newer with PyTorch installed. The recorded experiment used PyTorch 2.13 on CPU with two threads. Run commands from the repository root:
+Use Python 3.10 or newer with PyTorch installed. Run from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
+python -m antlab.semantic_demo --text "When it rains, it is possible that the door is not closed." --text "Please make sure that the budget limit is at most 20 USD."
 python -m unittest discover -s antlab/tests
-python -m antlab.english_connected_smoke --verify antlab/runs/english-body-smoke-20261005
-python -m antlab.english_connected_smoke --output antlab/runs/my-smoke
-python -m antlab.english_vector_size_probe --output antlab/runs/my-size-probe.json
+python -m antlab.semantic_run --output antlab/runs/semantic-v1-20261006 --verify
 ```
 
-Output paths must be new; existing artifacts are not overwritten. Verification checks source/artifact hashes and independently regenerates ten evaluation conditions from the saved checkpoint. Different PyTorch versions or platforms may yield different floating-point results; the strict saved-artifact verifier targets the recorded implementation.
+The receiver predicts kind, subject, predicate, polarity, certainty, condition, amount, comparator and unit. It receives actual serialized vectors, without source text or answer labels. A vector carries 64 payload bytes; a packet adds a 12-byte header. Two segments use 140 bytes, excluding network overhead. This can exceed the original text size.
 
-## What the measurements mean
+The demo uses seed 11, chosen before evaluation. Output is marked `model_prediction`, which can be wrong even for accepted text. Unsupported input stays unchanged locally with `unsupported` status. Acceptance means the text belongs to the finite grammar, not that its prediction is verified.
 
-| Raw English input | One vector payload | Representation size reduction |
-|---:|---:|---:|
-| 173 bytes | 64 bytes | 63.0% |
-| 394 bytes | 64 bytes | 83.8% |
-| 791 bytes | 64 bytes | 91.9% |
-| 1,400 bytes | 64 bytes | 95.4% |
+## Scope and documentation
 
-The vector size is fixed by architecture. These numbers are **not evidence that all original meaning survives**. On the long-input on/off pairs the model again always answered `YES`. Two units exchanging messages in both directions for two rounds use 256 logical payload bytes per example, excluding network overhead.
+- [English usage and Python API](docs/USAGE.md), [한국어 사용법](docs/USAGE.ko.md).
+- [Frozen v1 protocol](docs/AVL_V1_PROTOCOL.md) and [v1 results](docs/AVL_V1_RESULTS.md).
+- [Semantic input research direction](docs/SEMANTIC_INPUT.md).
 
-## Next research step
+Only the saved English templates are accepted, with lamp/heater/fan/door/budget subjects and amounts 10/20/50/100 USD. The caller supplies segment boundaries. Arbitrary prose, new entities or numbers, nested scope and automatic summarization remain unsupported. Vectors do not provide anonymization, authentication or network delivery.
 
-Train and evaluate meaning-preserving input representations before forcing stronger compression. Check facts, relations, requests, negation, conditions, and uncertainty with several questions about the same representation. Separate input-understanding failures from communication and output failures. Evaluate unseen combinations and task types; report payload and computation costs together with accuracy.
+To repeat training, use a new output folder:
+
+```bash
+python -m antlab.semantic_run --output antlab/runs/my-new-study
+```
+
+The fixed study uses three seeds, 1,500 steps each, final checkpoints and predeclared heldout gates. Verification regenerates data, checks source/artifact hashes and training metadata, and replays checkpoint inference through the byte codec. It does not retrain. Exact numerical replay targets the [recorded environment](antlab/runs/semantic-v1-environment-20261006.json).
+
+## Earlier v0 experiment
+
+The original 98,928-parameter connected character model always answered `YES` and scored 50% on its YES/NO smoke task. Its sources, checkpoint and failure reports remain intact: [body design](docs/research/2026-10-05-english-connected-body.md), [smoke results](docs/research/2026-10-05-english-body-results.md), [long-input measurements](docs/research/2026-10-06-long-vector-size.md).
+
+The earlier 64-byte vectors were smaller than long English inputs, but did not establish meaning retention. Adding AI units has not been shown to improve general intelligence by this repository.
+
+`antlab` is the historical Python module name retained for recorded hashes. AVL is the project name; wider ACT experiments belong outside this repository.
 
 ## Data and license
 
-All included examples are synthetic. This export contains selected research files rather than workspace history, private conversations, credentials, or local user configuration. Model checkpoints contain tensors and experiment metadata.
+Examples are synthetic. Published checkpoints contain tensors and experiment metadata. Private conversations, credentials and local user configuration are excluded from this export.
 
 Apache-2.0. See [LICENSE](LICENSE).

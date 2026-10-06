@@ -1,0 +1,8 @@
+{
+  "antlab/semantic_model.py": "c2dfae55aaa32d339c342b26d6512b3af3528d5287a893e593509b3074e233b3",
+  "antlab/semantic_codec.py": "e357f8b9d3b92971fe54c1c3eda6cb2391b1a05954d119b13745fda96faac412",
+  "antlab/semantic_data.py": "8ee6db8f592cb1e918692f813e785bb2c69276ae35a48a0a2d742a65e5510df5",
+  "antlab/semantic_run.py": "563bfbe43dce86b96ba81d88d4afe8dbb5621281fbc8013d9a2db260b5258251",
+  "antlab/english_connected_model.py": "442a47a7c8076ddd1c5dcbf83b6bbec694e3dffe8afcb83d275eee14cdec3f57",
+  "docs/AVL_V1_PROTOCOL.md": "70af89cc6a659333834d1fb38dc19f99fbdbf02f2105e4e16fe7949bead4cdf8"
+}

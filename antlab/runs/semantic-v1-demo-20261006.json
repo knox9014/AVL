@@ -1,0 +1,113 @@
+{
+  "status": "post_hoc_example_not_a_success_gate",
+  "seed": 11,
+  "sources": [
+    "When it rains, it is possible that the door is not closed.",
+    "Please make sure that the budget limit is at most 20 USD.",
+    "The budget is 17 USD."
+  ],
+  "supported_indices": [
+    0,
+    1
+  ],
+  "unsupported": [
+    {
+      "index": 2,
+      "status": "unsupported",
+      "text": "The budget is 17 USD."
+    }
+  ],
+  "receiver_input": "packet_bytes_only",
+  "prediction_status": "model_prediction",
+  "decoded_predictions": [
+    {
+      "kind": "fact",
+      "subject": "door",
+      "predicate": "closed",
+      "polarity": "negative",
+      "certainty": "possible",
+      "condition": "rain",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "request",
+      "subject": "budget",
+      "predicate": "limit",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "20",
+      "comparator": "at-most",
+      "unit": "USD"
+    }
+  ],
+  "expected_frames_for_separate_audit": [
+    {
+      "kind": "fact",
+      "subject": "door",
+      "predicate": "closed",
+      "polarity": "negative",
+      "certainty": "possible",
+      "condition": "rain",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "request",
+      "subject": "budget",
+      "predicate": "limit",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "20",
+      "comparator": "at-most",
+      "unit": "USD"
+    }
+  ],
+  "all_example_frames_match": true,
+  "vectors": [
+    [
+      0.8013052344322205,
+      2.058465003967285,
+      -0.25541380047798157,
+      -3.492535352706909,
+      -0.4857516288757324,
+      1.0536105632781982,
+      -1.089755892753601,
+      -0.9259986281394958,
+      0.5715593099594116,
+      0.5535259246826172,
+      -0.3566440939903259,
+      -0.8811038732528687,
+      0.9152374267578125,
+      1.9675025939941406,
+      0.4353153705596924,
+      -0.9203898906707764
+    ],
+    [
+      -0.32594335079193115,
+      -1.1816110610961914,
+      0.03616713359951973,
+      0.8162696957588196,
+      -0.3271074593067169,
+      1.7643643617630005,
+      0.25298988819122314,
+      1.6112525463104248,
+      -1.1948356628417969,
+      -1.4254796504974365,
+      2.4848830699920654,
+      0.7022777199745178,
+      -2.487354278564453,
+      -1.195096492767334,
+      -0.021723873913288116,
+      0.4260415732860565
+    ]
+  ],
+  "wire_hex": "41564c31010110000200000057224d3fe4bd034099c582beb3855fc070b4f8beb6dc863f1f7d8bbf3f0e6dbfb651123fe0b30d3f0e9ab6be069061bf004d6a3f20d7fb3fa8e1de3eac9e6bbf0ce2a6be083f97bffd23143d0df7503fa17aa7beb1d6e13fe487813e863dce3f60f098bf1e76b6bf53081f4079c8333fd0301fc0ecf898bf44f6b1bc1f22da3e",
+  "wire_bytes": 140,
+  "packet_sha256": "dc80fccdcf050254288b20e06099af3a7d049f429bd080fc1b54ce54ca944ee0",
+  "note": "Chosen demonstration, not a heldout estimate. Accepted grammar can still fail. Original sources and audit labels are never supplied to receive_packet."
+}

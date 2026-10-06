@@ -1,0 +1,9 @@
+{
+  "python": "3.14.3",
+  "pytorch": "2.13.0+xpu",
+  "device": "cpu",
+  "threads": 2,
+  "system": "Windows",
+  "dtype": "float32",
+  "note": "Sanitized environment metadata; no usernames, paths, hostnames or credentials."
+}

@@ -1,0 +1,18 @@
+{
+  "format": "avl-semantic-study-v1",
+  "files": {
+    "config.json": "f3fda15b84b8cec95589cca748187671141f58ab6ec2d4d60f8c400937945249",
+    "data.json": "bd49804dc350711d1b74dbb251b468d1e41f75c17f27dbfc428a340dafcd5d92",
+    "source_hashes.json": "76ea04890cf27079756d8a447856d39033844f836784942edd24706ab76a62e7",
+    "report.json": "b3bfaacb94e875d8067afd71c0b3b64bafb28ac56f8f86fea7e10970e4331e7e",
+    "seed-11.pt": "8c3c06726ba2f06fc83b2a6eb123a7d1004ef251f103df40459841da2460e9ab",
+    "seed-22.pt": "cfd2fd3aa394ed8253831b09437cebb744b9368af204d2160d1cbdaec93a4cd7",
+    "seed-33.pt": "4ad254ea1140fa0b51fbef1233518ae0118d8a1ecaf4b656e4e5a1f62400fa96",
+    "sources/antlab/semantic_model.py": "c2dfae55aaa32d339c342b26d6512b3af3528d5287a893e593509b3074e233b3",
+    "sources/antlab/semantic_codec.py": "e357f8b9d3b92971fe54c1c3eda6cb2391b1a05954d119b13745fda96faac412",
+    "sources/antlab/semantic_data.py": "8ee6db8f592cb1e918692f813e785bb2c69276ae35a48a0a2d742a65e5510df5",
+    "sources/antlab/semantic_run.py": "563bfbe43dce86b96ba81d88d4afe8dbb5621281fbc8013d9a2db260b5258251",
+    "sources/antlab/english_connected_model.py": "442a47a7c8076ddd1c5dcbf83b6bbec694e3dffe8afcb83d275eee14cdec3f57",
+    "sources/docs/AVL_V1_PROTOCOL.md": "70af89cc6a659333834d1fb38dc19f99fbdbf02f2105e4e16fe7949bead4cdf8"
+  }
+}
