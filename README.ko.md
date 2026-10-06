@@ -2,6 +2,8 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
+[개발 기록](docs/DEVELOPMENT_LOG.md), [공개 전 개인정보 검사](docs/PUBLICATION_PRIVACY.md), [실험용 int8 전송 결과](docs/INT8_WIRE_RESULTS.md)를 남깁니다. 공개 예시는 직접 검토한 합성 데이터이며 실제 사용자 대화는 포함하지 않습니다.
+
 선택 기능으로 [로컬 다국어 번역 계층](docs/MULTILINGUAL_GATEWAY.ko.md)을 추가했습니다. 첫 번역기는 100개 언어를 선언하지만, 실제 시험한 외국어 24문장의 번역 결과는 모두 현재 AVL 문법 밖이었습니다. [측정 결과와 한계](docs/MULTILINGUAL_RESULTS.md), [AI 통신 연구 참고 자료](docs/AI_COMMUNICATION_REFERENCES.md)를 확인하세요. 번역기의 자원과 의미 보존은 AVL 모델과 따로 평가해야 합니다.
 
 독립 학습한 모델 사이의 [교차 통신 실험](docs/AI_COMMUNICATION_REFERENCES.md#avl-cross-play-diagnostic)에서는 같은 체크포인트끼리 의미 복원 100%, 다른 체크포인트 6쌍의 평균은 0.1650%였습니다. 현재 AVL은 독립 모델 모두가 공유하는 벡터 언어가 아니며, 공통 의미 공간을 정렬하는 방법이 필요합니다.

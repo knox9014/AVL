@@ -1,0 +1,7416 @@
+{
+  "format": "avl-int8-codec-audit-v1",
+  "status": "posthoc_codec_comparison",
+  "preregistered": false,
+  "training_performed": false,
+  "changes_primary_gates": false,
+  "scope": "Frozen finite grammar only; all_grammar includes training examples. Lossy codec, not general semantic preservation.",
+  "device": "cpu",
+  "threads": 2,
+  "torch": "2.13.0+xpu",
+  "elapsed_seconds": 3.536356500000693,
+  "primary_verification": {
+    "status": "verified",
+    "format": "avl-semantic-study-v2",
+    "smoke_only": false,
+    "study_passed": true,
+    "seeds_verified": [
+      44,
+      55,
+      66
+    ]
+  },
+  "receiver_input": "packet_bytes_only_plus_fixed_field_vocabulary_mask",
+  "payload_bytes_per_vector": {
+    "float32": 64,
+    "int8": 20
+  },
+  "header_bytes": 12,
+  "source_hashes": {
+    "antlab/semantic_v2_model.py": "e2e7e269efe648780ef56c2931b8db44d0be7bfbd56846ff233400b09e5c9f6b",
+    "antlab/semantic_codec.py": "e357f8b9d3b92971fe54c1c3eda6cb2391b1a05954d119b13745fda96faac412",
+    "antlab/semantic_v2_data.py": "4cabe2f67879e49666cd34305e2918523b0a2a6b4b963f4cfcd0f1c3d5b02190",
+    "antlab/semantic_v2_run.py": "63cae0b68fbd0e702d4af54c5098fc23d3a4c809f7b9fe4a6dac5e881fb8f93f",
+    "antlab/semantic_model.py": "c2dfae55aaa32d339c342b26d6512b3af3528d5287a893e593509b3074e233b3",
+    "docs/AVL_V2_PROTOCOL.md": "1a494ad910c61cff6405e1b0af8a8fa1477c5eb1f581ad2c640cd641c20f061b",
+    "antlab/semantic_codec_int8.py": "1e900ab04102a821fb64aa9d7707f0a6f40ef7ac56308dac0cb4fe5e47166db1",
+    "antlab/semantic_int8_audit.py": "43cb7d2aac4e1effb275ba6326e9e18d20250bb13b32b69432a62f2203135604",
+    "antlab/semantic_v2_coverage.py": "b933e8a80d615b6c6c9bd920ddcee8fdb93ed59ec829bc05def46c75b548ccfe",
+    "antlab/semantic_v2_demo.py": "bab5d0294634aba8b38930bdf5c48b26253b06adba2b924a8c2c9e495d0d0bd0"
+  },
+  "checkpoint_hashes": {
+    "seed-44.pt": "a9d1f5348a67161e4ad33249d44e8c1633fe6f147a6d5c3ac754dd787e198ce2",
+    "seed-55.pt": "42404b544553b744e08a2e33e526d33d100d25e21f4ce86fc5e00fc784e997cc",
+    "seed-66.pt": "38efb3159009291473b8871fed8e87b6c4549233e173119c438c8b32f8ad61cf"
+  },
+  "seeds": {
+    "44": {
+      "joint": {
+        "examples": 202,
+        "results": {
+          "float32": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 12952,
+            "codec_seconds": 0.0003192999865859747
+          },
+          "int8": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 4064,
+            "codec_seconds": 0.0008417000062763691
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.012073993682861328,
+        "wire_reduction_fraction": 0.6862260654725139
+      },
+      "all_grammar": {
+        "examples": 5376,
+        "results": {
+          "float32": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 344568,
+            "codec_seconds": 0.022566600295249373
+          },
+          "int8": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 108024,
+            "codec_seconds": 0.04527019982924685
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.013926737010478973,
+        "wire_reduction_fraction": 0.6864943929790346
+      },
+      "unmeasured": {
+        "examples": 808,
+        "results": {
+          "float32": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 51796,
+            "codec_seconds": 0.00415150000480935
+          },
+          "int8": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 16244,
+            "codec_seconds": 0.007979799876920879
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.012564480304718018,
+        "wire_reduction_fraction": 0.6863850490385358
+      }
+    },
+    "55": {
+      "joint": {
+        "examples": 202,
+        "results": {
+          "float32": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 12952,
+            "codec_seconds": 0.0010712000075727701
+          },
+          "int8": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 4064,
+            "codec_seconds": 0.002197899972088635
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.01419377326965332,
+        "wire_reduction_fraction": 0.6862260654725139
+      },
+      "all_grammar": {
+        "examples": 5376,
+        "results": {
+          "float32": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 344568,
+            "codec_seconds": 0.026475100021343678
+          },
+          "int8": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 108024,
+            "codec_seconds": 0.04849210008978844
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.01491326093673706,
+        "wire_reduction_fraction": 0.6864943929790346
+      },
+      "unmeasured": {
+        "examples": 808,
+        "results": {
+          "float32": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 51796,
+            "codec_seconds": 0.003991300007328391
+          },
+          "int8": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 16244,
+            "codec_seconds": 0.007312900037504733
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.014281734824180603,
+        "wire_reduction_fraction": 0.6863850490385358
+      }
+    },
+    "66": {
+      "joint": {
+        "examples": 202,
+        "results": {
+          "float32": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 12952,
+            "codec_seconds": 0.0012037000269629061
+          },
+          "int8": {
+            "examples": 202,
+            "exact_frame_correct": 202,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  112,
+                  90
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    112,
+                    0
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  32,
+                  38,
+                  28,
+                  22,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    32,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    38,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    28,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  52,
+                  46,
+                  12,
+                  10,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    52,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    46,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    10,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    82
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  134,
+                  68
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    134,
+                    0
+                  ],
+                  [
+                    0,
+                    68
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  114,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    114,
+                    0
+                  ],
+                  [
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  60,
+                  44,
+                  58,
+                  40
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    60,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    58,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  120,
+                  22,
+                  16,
+                  22,
+                  22
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    22,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    22
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  120,
+                  32,
+                  22,
+                  28
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    32,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    22,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    28
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  120,
+                  82
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    120,
+                    0
+                  ],
+                  [
+                    0,
+                    82
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 4064,
+            "codec_seconds": 0.002490699989721179
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.014053106307983398,
+        "wire_reduction_fraction": 0.6862260654725139
+      },
+      "all_grammar": {
+        "examples": 5376,
+        "results": {
+          "float32": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 344568,
+            "codec_seconds": 0.02555039996514097
+          },
+          "int8": {
+            "examples": 5376,
+            "exact_frame_correct": 5376,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  768,
+                  768,
+                  768,
+                  768,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    768,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  1152,
+                  1152,
+                  384,
+                  384,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1152,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    384,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    384,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    2304
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  3840,
+                  1536
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3840,
+                    0
+                  ],
+                  [
+                    0,
+                    1536
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  2688,
+                  2688
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    2688,
+                    0
+                  ],
+                  [
+                    0,
+                    2688
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  1344,
+                  1344,
+                  1344,
+                  1344
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    1344,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1344,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1344,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1344
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  3072,
+                  576,
+                  576,
+                  576,
+                  576
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    576,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    576,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    576,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    576
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  3072,
+                  768,
+                  768,
+                  768
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    768,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    768,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    768
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  3072,
+                  2304
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    3072,
+                    0
+                  ],
+                  [
+                    0,
+                    2304
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 108024,
+            "codec_seconds": 0.04512350034201518
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.01522594690322876,
+        "wire_reduction_fraction": 0.6864943929790346
+      },
+      "unmeasured": {
+        "examples": 808,
+        "results": {
+          "float32": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 51796,
+            "codec_seconds": 0.004129100008867681
+          },
+          "int8": {
+            "examples": 808,
+            "exact_frame_correct": 808,
+            "exact_frame_accuracy": 1.0,
+            "macro_class_accuracy": 1.0,
+            "fields": {
+              "kind": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "fact",
+                  "request"
+                ],
+                "class_support": [
+                  448,
+                  360
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    448,
+                    0
+                  ],
+                  [
+                    0,
+                    360
+                  ]
+                ]
+              },
+              "subject": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "lamp",
+                  "heater",
+                  "fan",
+                  "door",
+                  "budget"
+                ],
+                "class_support": [
+                  128,
+                  152,
+                  112,
+                  88,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    128,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    152,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    112,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "predicate": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "on",
+                  "off",
+                  "open",
+                  "closed",
+                  "limit"
+                ],
+                "class_support": [
+                  208,
+                  184,
+                  48,
+                  40,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    208,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    184,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    40,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    328
+                  ]
+                ]
+              },
+              "polarity": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "positive",
+                  "negative"
+                ],
+                "class_support": [
+                  536,
+                  272
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    536,
+                    0
+                  ],
+                  [
+                    0,
+                    272
+                  ]
+                ]
+              },
+              "certainty": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "certain",
+                  "possible"
+                ],
+                "class_support": [
+                  456,
+                  352
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    456,
+                    0
+                  ],
+                  [
+                    0,
+                    352
+                  ]
+                ]
+              },
+              "condition": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "rain",
+                  "cold",
+                  "night"
+                ],
+                "class_support": [
+                  240,
+                  176,
+                  232,
+                  160
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    240,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    176,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    232,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    160
+                  ]
+                ]
+              },
+              "amount": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "10",
+                  "20",
+                  "50",
+                  "100"
+                ],
+                "class_support": [
+                  480,
+                  88,
+                  64,
+                  88,
+                  88
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    88,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    64,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    0,
+                    88
+                  ]
+                ]
+              },
+              "comparator": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "at-most",
+                  "at-least",
+                  "exact"
+                ],
+                "class_support": [
+                  480,
+                  128,
+                  88,
+                  112
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    128,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    88,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    112
+                  ]
+                ]
+              },
+              "unit": {
+                "accuracy": 1.0,
+                "macro_class_accuracy": 1.0,
+                "macro_policy": "mean_over_classes_present_in_gold",
+                "classes": [
+                  "none",
+                  "USD"
+                ],
+                "class_support": [
+                  480,
+                  328
+                ],
+                "class_accuracy": [
+                  1.0,
+                  1.0
+                ],
+                "confusion": [
+                  [
+                    480,
+                    0
+                  ],
+                  [
+                    0,
+                    328
+                  ]
+                ]
+              }
+            },
+            "wire_bytes": 16244,
+            "codec_seconds": 0.007258900091983378
+          }
+        },
+        "changed_frame_predictions": 0,
+        "maximum_absolute_vector_error": 0.014290332794189453,
+        "wire_reduction_fraction": 0.6863850490385358
+      }
+    }
+  }
+}

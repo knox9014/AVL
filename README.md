@@ -23,6 +23,7 @@ The demo uses seed 44, chosen before evaluation. Output is marked model_predicti
 
 ## Scope and documentation
 
+- [Development log](docs/DEVELOPMENT_LOG.md), [publication privacy checks](docs/PUBLICATION_PRIVACY.md), and [experimental int8 wire results](docs/INT8_WIRE_RESULTS.md).
 - [Optional local multilingual translation gateway](docs/MULTILINGUAL_GATEWAY.md), [measured limitations](docs/MULTILINGUAL_RESULTS.md), and [AI communication references](docs/AI_COMMUNICATION_REFERENCES.md). The first backend declares 100 languages; all 24 foreign probe translations remained outside AVL's grammar. Translation is separately resourced and is not general multilingual AVL understanding.
 - [Batch translation efficiency](docs/TRANSLATION_EFFICIENCY.md): request-local reuse and bounded batches reduced observed inference time from 94 s to 38 s on the synthetic workload, with identical outputs and about 2.1% more peak process memory. Meaning coverage remains unchanged.
 - [English usage and Python API](docs/USAGE_V2.md), [한국어 사용법](docs/USAGE_V2.ko.md).
