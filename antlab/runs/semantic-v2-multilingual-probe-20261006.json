@@ -1,0 +1,628 @@
+{
+  "format": "avl-v2-multilingual-admission-probe-v1",
+  "status": "posthoc_diagnostic",
+  "training_performed": false,
+  "scope": "Three manually authored illustrative sentences per language; no representative multilingual benchmark. Rejected input has no semantic accuracy estimate.",
+  "cases": {
+    "English": [
+      "It is certain that the lamp is on.",
+      "When it rains, it is possible that the door is not closed.",
+      "Please make sure that the budget limit is at most 20 USD."
+    ],
+    "Korean": [
+      "램프가 켜져 있는 것은 확실하다.",
+      "비가 오면 문이 닫혀 있지 않을 가능성이 있다.",
+      "예산 한도가 최대 20 USD가 되도록 해 주세요."
+    ],
+    "Japanese": [
+      "ランプがついていることは確かです。",
+      "雨が降るとき、ドアが閉まっていない可能性があります。",
+      "予算の上限が最大20 USDになるようにしてください。"
+    ],
+    "Chinese": [
+      "可以确定，灯是开着的。",
+      "下雨时，门有可能没有关上。",
+      "请确保预算上限不超过20 USD。"
+    ],
+    "Spanish": [
+      "Es cierto que la lámpara está encendida.",
+      "Cuando llueve, es posible que la puerta no esté cerrada.",
+      "Asegúrate de que el límite del presupuesto sea como máximo 20 USD."
+    ],
+    "French": [
+      "Il est certain que la lampe est allumée.",
+      "Quand il pleut, il est possible que la porte ne soit pas fermée.",
+      "Veuillez assurer que la limite du budget est au maximum de 20 USD."
+    ],
+    "German": [
+      "Es ist sicher, dass die Lampe an ist.",
+      "Wenn es regnet, ist es möglich, dass die Tür nicht geschlossen ist.",
+      "Bitte stellen Sie sicher, dass das Budgetlimit maximal 20 USD ist."
+    ],
+    "Russian": [
+      "Несомненно, лампа включена.",
+      "Когда идет дождь, возможно, дверь не закрыта.",
+      "Пожалуйста, убедитесь, что лимит бюджета не превышает 20 USD."
+    ],
+    "Arabic": [
+      "من المؤكد أن المصباح مضاء.",
+      "عندما تمطر، من الممكن أن يكون الباب غير مغلق.",
+      "يرجى التأكد من أن حد الميزانية لا يتجاوز 20 USD."
+    ],
+    "Spanish_ASCII_diagnostic": [
+      "Es cierto que la lampara esta encendida.",
+      "Cuando llueve, es posible que la puerta no este cerrada.",
+      "Asegurate de que el limite del presupuesto sea como maximo 20 USD."
+    ]
+  },
+  "expected_for_english_control_only": [
+    {
+      "kind": "fact",
+      "subject": "lamp",
+      "predicate": "on",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "fact",
+      "subject": "door",
+      "predicate": "closed",
+      "polarity": "negative",
+      "certainty": "possible",
+      "condition": "rain",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "request",
+      "subject": "budget",
+      "predicate": "limit",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "20",
+      "comparator": "at-most",
+      "unit": "USD"
+    }
+  ],
+  "seeds": {
+    "44": {
+      "English": {
+        "examples": 3,
+        "admitted": 3,
+        "unsupported": 0,
+        "wire_bytes": 204,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "accepted",
+          "accepted",
+          "accepted"
+        ],
+        "predictions": [
+          {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          }
+        ],
+        "english_control_exact_matches": 3
+      },
+      "Korean": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Japanese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Chinese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "French": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "German": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Russian": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Arabic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish_ASCII_diagnostic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      }
+    },
+    "55": {
+      "English": {
+        "examples": 3,
+        "admitted": 3,
+        "unsupported": 0,
+        "wire_bytes": 204,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "accepted",
+          "accepted",
+          "accepted"
+        ],
+        "predictions": [
+          {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          }
+        ],
+        "english_control_exact_matches": 3
+      },
+      "Korean": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Japanese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Chinese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "French": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "German": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Russian": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Arabic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish_ASCII_diagnostic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      }
+    },
+    "66": {
+      "English": {
+        "examples": 3,
+        "admitted": 3,
+        "unsupported": 0,
+        "wire_bytes": 204,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "accepted",
+          "accepted",
+          "accepted"
+        ],
+        "predictions": [
+          {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          }
+        ],
+        "english_control_exact_matches": 3
+      },
+      "Korean": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Japanese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Chinese": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "French": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "German": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "supply nonempty ASCII text list",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Russian": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Arabic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list",
+          "supply nonempty ASCII text list"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      },
+      "Spanish_ASCII_diagnostic": {
+        "examples": 3,
+        "admitted": 0,
+        "unsupported": 3,
+        "wire_bytes": 0,
+        "originals_retained": true,
+        "tokenizer_status": [
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary",
+          "empty text or word outside training vocabulary"
+        ],
+        "predictions": [],
+        "english_control_exact_matches": null
+      }
+    }
+  },
+  "source_hashes": {
+    "semantic_v2_model.py": "e2e7e269efe648780ef56c2931b8db44d0be7bfbd56846ff233400b09e5c9f6b",
+    "semantic_v2_data.py": "4cabe2f67879e49666cd34305e2918523b0a2a6b4b963f4cfcd0f1c3d5b02190",
+    "semantic_v2_demo.py": "bab5d0294634aba8b38930bdf5c48b26253b06adba2b924a8c2c9e495d0d0bd0"
+  }
+}

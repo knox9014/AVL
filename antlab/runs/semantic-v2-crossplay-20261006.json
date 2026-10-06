@@ -1,0 +1,3723 @@
+{
+  "format": "avl-v2-posthoc-crossplay-v1",
+  "status": "posthoc_crossplay",
+  "preregistered": false,
+  "training_performed": false,
+  "adapters_used": false,
+  "changes_primary_gates": false,
+  "primary_study_passed": true,
+  "dataset": "frozen_joint_heldout",
+  "examples": 202,
+  "semantic_frames": 101,
+  "surface_templates": [
+    10,
+    11
+  ],
+  "same_seed_mean_exact": 1.0,
+  "different_seed_mean_exact": 0.0016501650165016502,
+  "primary_joint_exact": {
+    "44": 1.0,
+    "55": 1.0,
+    "66": 1.0
+  },
+  "same_seed_matches_primary": {
+    "44": true,
+    "55": true,
+    "66": true
+  },
+  "receiver_input": "deserialized_packet_vectors_and_field_selectors_only",
+  "scope": "Cross-seed AVL v2 compatibility only; not general AI interoperability.",
+  "primary_verification": {
+    "status": "verified",
+    "format": "avl-semantic-study-v2",
+    "smoke_only": false,
+    "study_passed": true,
+    "seeds_verified": [
+      44,
+      55,
+      66
+    ]
+  },
+  "source_hashes": {
+    "antlab/semantic_v2_model.py": "e2e7e269efe648780ef56c2931b8db44d0be7bfbd56846ff233400b09e5c9f6b",
+    "antlab/semantic_codec.py": "e357f8b9d3b92971fe54c1c3eda6cb2391b1a05954d119b13745fda96faac412",
+    "antlab/semantic_v2_data.py": "4cabe2f67879e49666cd34305e2918523b0a2a6b4b963f4cfcd0f1c3d5b02190",
+    "antlab/semantic_v2_run.py": "63cae0b68fbd0e702d4af54c5098fc23d3a4c809f7b9fe4a6dac5e881fb8f93f",
+    "antlab/semantic_model.py": "c2dfae55aaa32d339c342b26d6512b3af3528d5287a893e593509b3074e233b3",
+    "docs/AVL_V2_PROTOCOL.md": "1a494ad910c61cff6405e1b0af8a8fa1477c5eb1f581ad2c640cd641c20f061b",
+    "antlab/semantic_v2_demo.py": "bab5d0294634aba8b38930bdf5c48b26253b06adba2b924a8c2c9e495d0d0bd0",
+    "antlab/semantic_v2_crossplay.py": "18691c04861148762384629ffd54a4834aa400473c83523d85c9fce3ff274a96"
+  },
+  "checkpoint_hashes": {
+    "seed-44.pt": "a9d1f5348a67161e4ad33249d44e8c1633fe6f147a6d5c3ac754dd787e198ce2",
+    "seed-55.pt": "42404b544553b744e08a2e33e526d33d100d25e21f4ce86fc5e00fc784e997cc",
+    "seed-66.pt": "38efb3159009291473b8871fed8e87b6c4549233e173119c438c8b32f8ad61cf"
+  },
+  "dataset_file": "data.json",
+  "dataset_sha256": "cdc8187182b9bb503998fdaf2c453a67132c0beea22bfeb461e527f4eb24cfab",
+  "pairs": {
+    "44->44": {
+      "examples": 202,
+      "exact_frame_correct": 202,
+      "exact_frame_accuracy": 1.0,
+      "macro_class_accuracy": 1.0,
+      "fields": {
+        "kind": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              112,
+              0
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              32,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              38,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              28,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              52,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              46,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              134,
+              0
+            ],
+            [
+              0,
+              68
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              114,
+              0
+            ],
+            [
+              0,
+              88
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              60,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              44,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              58,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              40
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              22,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              22
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              32,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              28
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0
+            ],
+            [
+              0,
+              82
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "44->55": {
+      "examples": 202,
+      "exact_frame_correct": 0,
+      "exact_frame_accuracy": 0.0,
+      "macro_class_accuracy": 0.3009314632870745,
+      "fields": {
+        "kind": {
+          "accuracy": 0.22277227722772278,
+          "macro_class_accuracy": 0.22162698412698412,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.23214285714285715,
+            0.2111111111111111
+          ],
+          "confusion": [
+            [
+              26,
+              86
+            ],
+            [
+              71,
+              19
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.20297029702970298,
+          "macro_class_accuracy": 0.1,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "confusion": [
+            [
+              0,
+              6,
+              2,
+              6,
+              18
+            ],
+            [
+              0,
+              0,
+              0,
+              19,
+              19
+            ],
+            [
+              0,
+              0,
+              0,
+              6,
+              22
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              20
+            ],
+            [
+              0,
+              0,
+              4,
+              37,
+              41
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.2722772277227723,
+          "macro_class_accuracy": 0.15795741903907334,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.038461538461538464,
+            0.2391304347826087,
+            0.0,
+            0.0,
+            0.5121951219512195
+          ],
+          "confusion": [
+            [
+              2,
+              8,
+              0,
+              6,
+              36
+            ],
+            [
+              2,
+              11,
+              4,
+              0,
+              29
+            ],
+            [
+              4,
+              0,
+              0,
+              0,
+              8
+            ],
+            [
+              2,
+              0,
+              0,
+              0,
+              8
+            ],
+            [
+              6,
+              9,
+              13,
+              12,
+              42
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.6287128712871287,
+          "macro_class_accuracy": 0.5499341527655839,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.7910447761194029,
+            0.3088235294117647
+          ],
+          "confusion": [
+            [
+              106,
+              28
+            ],
+            [
+              47,
+              21
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.47029702970297027,
+          "macro_class_accuracy": 0.45813397129186606,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.5526315789473685,
+            0.36363636363636365
+          ],
+          "confusion": [
+            [
+              63,
+              51
+            ],
+            [
+              56,
+              32
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.16831683168316833,
+          "macro_class_accuracy": 0.14813218390804597,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.26666666666666666,
+            0.0,
+            0.27586206896551724,
+            0.05
+          ],
+          "confusion": [
+            [
+              16,
+              14,
+              16,
+              14
+            ],
+            [
+              8,
+              0,
+              14,
+              22
+            ],
+            [
+              0,
+              1,
+              16,
+              41
+            ],
+            [
+              12,
+              26,
+              0,
+              2
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.48514851485148514,
+          "macro_class_accuracy": 0.3121969696969697,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.6916666666666667,
+            0.18181818181818182,
+            0.6875,
+            0.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              83,
+              11,
+              2,
+              17,
+              7
+            ],
+            [
+              14,
+              4,
+              4,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              11,
+              0,
+              2
+            ],
+            [
+              18,
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              22,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.38613861386138615,
+          "macro_class_accuracy": 0.19475108225108226,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.6166666666666667,
+            0.0,
+            0.09090909090909091,
+            0.07142857142857142
+          ],
+          "confusion": [
+            [
+              74,
+              18,
+              4,
+              24
+            ],
+            [
+              22,
+              0,
+              0,
+              10
+            ],
+            [
+              18,
+              0,
+              2,
+              2
+            ],
+            [
+              18,
+              4,
+              4,
+              2
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.594059405940594,
+          "macro_class_accuracy": 0.5656504065040651,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.7166666666666667,
+            0.4146341463414634
+          ],
+          "confusion": [
+            [
+              86,
+              34
+            ],
+            [
+              48,
+              34
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "44->66": {
+      "examples": 202,
+      "exact_frame_correct": 2,
+      "exact_frame_accuracy": 0.009900990099009901,
+      "macro_class_accuracy": 0.3472421520029062,
+      "fields": {
+        "kind": {
+          "accuracy": 0.297029702970297,
+          "macro_class_accuracy": 0.28095238095238095,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.42857142857142855,
+            0.13333333333333333
+          ],
+          "confusion": [
+            [
+              48,
+              64
+            ],
+            [
+              78,
+              12
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.3118811881188119,
+          "macro_class_accuracy": 0.24680388610106196,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.3125,
+            0.07894736842105263,
+            0.0,
+            0.3181818181818182,
+            0.524390243902439
+          ],
+          "confusion": [
+            [
+              10,
+              4,
+              0,
+              0,
+              18
+            ],
+            [
+              10,
+              3,
+              8,
+              0,
+              17
+            ],
+            [
+              4,
+              0,
+              0,
+              0,
+              24
+            ],
+            [
+              0,
+              0,
+              0,
+              7,
+              15
+            ],
+            [
+              0,
+              2,
+              10,
+              27,
+              43
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.3415841584158416,
+          "macro_class_accuracy": 0.2309454278489273,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.11538461538461539,
+            0.21739130434782608,
+            0.0,
+            0.2,
+            0.6219512195121951
+          ],
+          "confusion": [
+            [
+              6,
+              40,
+              0,
+              0,
+              6
+            ],
+            [
+              4,
+              10,
+              0,
+              0,
+              32
+            ],
+            [
+              7,
+              0,
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              8
+            ],
+            [
+              4,
+              7,
+              20,
+              0,
+              51
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.5495049504950495,
+          "macro_class_accuracy": 0.4141791044776119,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.8283582089552238,
+            0.0
+          ],
+          "confusion": [
+            [
+              111,
+              23
+            ],
+            [
+              68,
+              0
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.5148514851485149,
+          "macro_class_accuracy": 0.523524720893142,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.45614035087719296,
+            0.5909090909090909
+          ],
+          "confusion": [
+            [
+              52,
+              62
+            ],
+            [
+              36,
+              52
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.33663366336633666,
+          "macro_class_accuracy": 0.3311781609195402,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.5333333333333333,
+            0.0,
+            0.2413793103448276,
+            0.55
+          ],
+          "confusion": [
+            [
+              32,
+              4,
+              22,
+              2
+            ],
+            [
+              31,
+              0,
+              5,
+              8
+            ],
+            [
+              18,
+              14,
+              14,
+              12
+            ],
+            [
+              2,
+              10,
+              6,
+              22
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.5297029702970297,
+          "macro_class_accuracy": 0.26681818181818184,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.8,
+            0.0,
+            0.125,
+            0.4090909090909091,
+            0.0
+          ],
+          "confusion": [
+            [
+              96,
+              21,
+              0,
+              3,
+              0
+            ],
+            [
+              10,
+              0,
+              8,
+              4,
+              0
+            ],
+            [
+              14,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              9,
+              1
+            ],
+            [
+              13,
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.5099009900990099,
+          "macro_class_accuracy": 0.29266774891774894,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.7583333333333333,
+            0.25,
+            0.09090909090909091,
+            0.07142857142857142
+          ],
+          "confusion": [
+            [
+              91,
+              22,
+              0,
+              7
+            ],
+            [
+              11,
+              8,
+              4,
+              9
+            ],
+            [
+              12,
+              0,
+              2,
+              8
+            ],
+            [
+              23,
+              0,
+              3,
+              2
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.5544554455445545,
+          "macro_class_accuracy": 0.538109756097561,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.625,
+            0.45121951219512196
+          ],
+          "confusion": [
+            [
+              75,
+              45
+            ],
+            [
+              45,
+              37
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "55->44": {
+      "examples": 202,
+      "exact_frame_correct": 0,
+      "exact_frame_accuracy": 0.0,
+      "macro_class_accuracy": 0.3118916498404601,
+      "fields": {
+        "kind": {
+          "accuracy": 0.38613861386138615,
+          "macro_class_accuracy": 0.3973214285714286,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.29464285714285715,
+            0.5
+          ],
+          "confusion": [
+            [
+              33,
+              79
+            ],
+            [
+              45,
+              45
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.19801980198019803,
+          "macro_class_accuracy": 0.13745644599303136,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.25,
+            0.0,
+            0.07142857142857142,
+            0.0,
+            0.36585365853658536
+          ],
+          "confusion": [
+            [
+              8,
+              0,
+              0,
+              6,
+              18
+            ],
+            [
+              9,
+              0,
+              0,
+              23,
+              6
+            ],
+            [
+              0,
+              0,
+              2,
+              3,
+              23
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              20
+            ],
+            [
+              0,
+              0,
+              9,
+              43,
+              30
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.17326732673267325,
+          "macro_class_accuracy": 0.1063626723223754,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.0,
+            0.2391304347826087,
+            0.0,
+            0.0,
+            0.2926829268292683
+          ],
+          "confusion": [
+            [
+              0,
+              11,
+              8,
+              5,
+              28
+            ],
+            [
+              4,
+              11,
+              1,
+              0,
+              30
+            ],
+            [
+              0,
+              4,
+              0,
+              0,
+              8
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              4
+            ],
+            [
+              13,
+              18,
+              8,
+              19,
+              24
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.4900990099009901,
+          "macro_class_accuracy": 0.4164837576821773,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.6417910447761194,
+            0.19117647058823528
+          ],
+          "confusion": [
+            [
+              86,
+              48
+            ],
+            [
+              55,
+              13
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.4752475247524752,
+          "macro_class_accuracy": 0.4728867623604466,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.49122807017543857,
+            0.45454545454545453
+          ],
+          "confusion": [
+            [
+              56,
+              58
+            ],
+            [
+              48,
+              40
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.3316831683168317,
+          "macro_class_accuracy": 0.28764367816091957,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.5833333333333334,
+            0.0,
+            0.5172413793103449,
+            0.05
+          ],
+          "confusion": [
+            [
+              35,
+              4,
+              1,
+              20
+            ],
+            [
+              26,
+              0,
+              0,
+              18
+            ],
+            [
+              18,
+              10,
+              30,
+              0
+            ],
+            [
+              1,
+              4,
+              33,
+              2
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.4306930693069307,
+          "macro_class_accuracy": 0.22606060606060607,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.6416666666666667,
+            0.36363636363636365,
+            0.125,
+            0.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              77,
+              22,
+              4,
+              17,
+              0
+            ],
+            [
+              8,
+              8,
+              4,
+              2,
+              0
+            ],
+            [
+              6,
+              3,
+              2,
+              5,
+              0
+            ],
+            [
+              11,
+              7,
+              4,
+              0,
+              0
+            ],
+            [
+              12,
+              6,
+              2,
+              2,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.5,
+          "macro_class_accuracy": 0.2846590909090909,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.775,
+            0.0,
+            0.36363636363636365,
+            0.0
+          ],
+          "confusion": [
+            [
+              93,
+              10,
+              16,
+              1
+            ],
+            [
+              24,
+              0,
+              0,
+              8
+            ],
+            [
+              8,
+              0,
+              8,
+              6
+            ],
+            [
+              12,
+              12,
+              4,
+              0
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.4900990099009901,
+          "macro_class_accuracy": 0.47815040650406504,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.5416666666666666,
+            0.4146341463414634
+          ],
+          "confusion": [
+            [
+              65,
+              55
+            ],
+            [
+              48,
+              34
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "55->55": {
+      "examples": 202,
+      "exact_frame_correct": 202,
+      "exact_frame_accuracy": 1.0,
+      "macro_class_accuracy": 1.0,
+      "fields": {
+        "kind": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              112,
+              0
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              32,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              38,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              28,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              52,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              46,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              134,
+              0
+            ],
+            [
+              0,
+              68
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              114,
+              0
+            ],
+            [
+              0,
+              88
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              60,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              44,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              58,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              40
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              22,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              22
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              32,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              28
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0
+            ],
+            [
+              0,
+              82
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "55->66": {
+      "examples": 202,
+      "exact_frame_correct": 0,
+      "exact_frame_accuracy": 0.0,
+      "macro_class_accuracy": 0.35988139312008977,
+      "fields": {
+        "kind": {
+          "accuracy": 0.6287128712871287,
+          "macro_class_accuracy": 0.6302579365079366,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.6160714285714286,
+            0.6444444444444445
+          ],
+          "confusion": [
+            [
+              69,
+              43
+            ],
+            [
+              32,
+              58
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.17326732673267325,
+          "macro_class_accuracy": 0.131725238817665,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.125,
+            0.05263157894736842,
+            0.14285714285714285,
+            0.045454545454545456,
+            0.2926829268292683
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              0,
+              1,
+              27
+            ],
+            [
+              2,
+              2,
+              1,
+              20,
+              13
+            ],
+            [
+              4,
+              0,
+              4,
+              6,
+              14
+            ],
+            [
+              1,
+              0,
+              2,
+              1,
+              18
+            ],
+            [
+              5,
+              13,
+              19,
+              21,
+              24
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.21287128712871287,
+          "macro_class_accuracy": 0.15059140223509257,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.07692307692307693,
+            0.45652173913043476,
+            0.0,
+            0.0,
+            0.21951219512195122
+          ],
+          "confusion": [
+            [
+              4,
+              0,
+              4,
+              2,
+              42
+            ],
+            [
+              13,
+              21,
+              4,
+              0,
+              8
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              12
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              3
+            ],
+            [
+              6,
+              48,
+              8,
+              2,
+              18
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.6336633663366337,
+          "macro_class_accuracy": 0.49209833187006147,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.9253731343283582,
+            0.058823529411764705
+          ],
+          "confusion": [
+            [
+              124,
+              10
+            ],
+            [
+              64,
+              4
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.5891089108910891,
+          "macro_class_accuracy": 0.5932017543859649,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.5614035087719298,
+            0.625
+          ],
+          "confusion": [
+            [
+              64,
+              50
+            ],
+            [
+              33,
+              55
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.2524752475247525,
+          "macro_class_accuracy": 0.25433646812957156,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.18333333333333332,
+            0.3409090909090909,
+            0.29310344827586204,
+            0.2
+          ],
+          "confusion": [
+            [
+              11,
+              11,
+              14,
+              24
+            ],
+            [
+              8,
+              15,
+              13,
+              8
+            ],
+            [
+              22,
+              5,
+              17,
+              14
+            ],
+            [
+              16,
+              10,
+              6,
+              8
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.4603960396039604,
+          "macro_class_accuracy": 0.19151515151515153,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.7416666666666667,
+            0.0,
+            0.125,
+            0.09090909090909091,
+            0.0
+          ],
+          "confusion": [
+            [
+              89,
+              1,
+              14,
+              10,
+              6
+            ],
+            [
+              20,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              0,
+              2,
+              2,
+              0
+            ],
+            [
+              14,
+              4,
+              2,
+              2,
+              0
+            ],
+            [
+              16,
+              6,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.4801980198019802,
+          "macro_class_accuracy": 0.28148674242424243,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.7083333333333334,
+            0.28125,
+            0.13636363636363635,
+            0.0
+          ],
+          "confusion": [
+            [
+              85,
+              4,
+              16,
+              15
+            ],
+            [
+              21,
+              9,
+              2,
+              0
+            ],
+            [
+              15,
+              4,
+              3,
+              0
+            ],
+            [
+              14,
+              5,
+              9,
+              0
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.5346534653465347,
+          "macro_class_accuracy": 0.5137195121951219,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.625,
+            0.4024390243902439
+          ],
+          "confusion": [
+            [
+              75,
+              45
+            ],
+            [
+              49,
+              33
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "66->44": {
+      "examples": 202,
+      "exact_frame_correct": 0,
+      "exact_frame_accuracy": 0.0,
+      "macro_class_accuracy": 0.315008510843825,
+      "fields": {
+        "kind": {
+          "accuracy": 0.37623762376237624,
+          "macro_class_accuracy": 0.3796626984126984,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.3482142857142857,
+            0.4111111111111111
+          ],
+          "confusion": [
+            [
+              39,
+              73
+            ],
+            [
+              53,
+              37
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.1782178217821782,
+          "macro_class_accuracy": 0.10675691445909674,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.0,
+            0.05263157894736842,
+            0.0,
+            0.09090909090909091,
+            0.3902439024390244
+          ],
+          "confusion": [
+            [
+              0,
+              8,
+              9,
+              0,
+              15
+            ],
+            [
+              12,
+              2,
+              3,
+              9,
+              12
+            ],
+            [
+              1,
+              7,
+              0,
+              0,
+              20
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              20
+            ],
+            [
+              4,
+              4,
+              0,
+              42,
+              32
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.3465346534653465,
+          "macro_class_accuracy": 0.22538950974794028,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.17307692307692307,
+            0.4782608695652174,
+            0.0,
+            0.0,
+            0.47560975609756095
+          ],
+          "confusion": [
+            [
+              9,
+              21,
+              6,
+              0,
+              16
+            ],
+            [
+              11,
+              22,
+              0,
+              0,
+              13
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              12
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              10
+            ],
+            [
+              3,
+              27,
+              6,
+              7,
+              39
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.44554455445544555,
+          "macro_class_accuracy": 0.3358208955223881,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.6716417910447762,
+            0.0
+          ],
+          "confusion": [
+            [
+              90,
+              44
+            ],
+            [
+              68,
+              0
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.698019801980198,
+          "macro_class_accuracy": 0.6845095693779905,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.7894736842105263,
+            0.5795454545454546
+          ],
+          "confusion": [
+            [
+              90,
+              24
+            ],
+            [
+              37,
+              51
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.3217821782178218,
+          "macro_class_accuracy": 0.29540229885057473,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.48333333333333334,
+            0.0,
+            0.4482758620689655,
+            0.25
+          ],
+          "confusion": [
+            [
+              29,
+              19,
+              6,
+              6
+            ],
+            [
+              9,
+              0,
+              14,
+              21
+            ],
+            [
+              18,
+              4,
+              26,
+              10
+            ],
+            [
+              6,
+              18,
+              6,
+              10
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.3415841584158416,
+          "macro_class_accuracy": 0.15954545454545455,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.525,
+            0.0,
+            0.0,
+            0.2727272727272727,
+            0.0
+          ],
+          "confusion": [
+            [
+              63,
+              28,
+              24,
+              3,
+              2
+            ],
+            [
+              20,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              4,
+              4,
+              0,
+              8,
+              0
+            ],
+            [
+              16,
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              13,
+              3,
+              0,
+              6,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.47029702970297027,
+          "macro_class_accuracy": 0.2574404761904762,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.7083333333333334,
+            0.25,
+            0.0,
+            0.07142857142857142
+          ],
+          "confusion": [
+            [
+              85,
+              8,
+              11,
+              16
+            ],
+            [
+              18,
+              8,
+              0,
+              6
+            ],
+            [
+              16,
+              2,
+              0,
+              4
+            ],
+            [
+              18,
+              4,
+              4,
+              2
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.4158415841584158,
+          "macro_class_accuracy": 0.3905487804878049,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.525,
+            0.25609756097560976
+          ],
+          "confusion": [
+            [
+              63,
+              57
+            ],
+            [
+              61,
+              21
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "66->55": {
+      "examples": 202,
+      "exact_frame_correct": 0,
+      "exact_frame_accuracy": 0.0,
+      "macro_class_accuracy": 0.34873298457465424,
+      "fields": {
+        "kind": {
+          "accuracy": 0.6831683168316832,
+          "macro_class_accuracy": 0.675,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            0.75,
+            0.6
+          ],
+          "confusion": [
+            [
+              84,
+              28
+            ],
+            [
+              36,
+              54
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 0.33663366336633666,
+          "macro_class_accuracy": 0.19972492206125067,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            0.0,
+            0.05263157894736842,
+            0.21428571428571427,
+            0.0,
+            0.7317073170731707
+          ],
+          "confusion": [
+            [
+              0,
+              2,
+              2,
+              16,
+              12
+            ],
+            [
+              0,
+              2,
+              0,
+              4,
+              32
+            ],
+            [
+              0,
+              0,
+              6,
+              0,
+              22
+            ],
+            [
+              0,
+              7,
+              4,
+              0,
+              11
+            ],
+            [
+              0,
+              7,
+              9,
+              6,
+              60
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 0.24752475247524752,
+          "macro_class_accuracy": 0.1542241074584659,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            0.0,
+            0.043478260869565216,
+            0.16666666666666666,
+            0.0,
+            0.5609756097560976
+          ],
+          "confusion": [
+            [
+              0,
+              25,
+              0,
+              2,
+              25
+            ],
+            [
+              0,
+              2,
+              0,
+              2,
+              42
+            ],
+            [
+              2,
+              4,
+              2,
+              0,
+              4
+            ],
+            [
+              2,
+              2,
+              0,
+              0,
+              6
+            ],
+            [
+              22,
+              8,
+              6,
+              0,
+              46
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 0.6633663366336634,
+          "macro_class_accuracy": 0.550702370500439,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            0.8955223880597015,
+            0.20588235294117646
+          ],
+          "confusion": [
+            [
+              120,
+              14
+            ],
+            [
+              54,
+              14
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 0.4801980198019802,
+          "macro_class_accuracy": 0.48116028708133973,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            0.47368421052631576,
+            0.48863636363636365
+          ],
+          "confusion": [
+            [
+              54,
+              60
+            ],
+            [
+              45,
+              43
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 0.24752475247524752,
+          "macro_class_accuracy": 0.27037617554858934,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            0.1,
+            0.4090909090909091,
+            0.1724137931034483,
+            0.4
+          ],
+          "confusion": [
+            [
+              6,
+              16,
+              8,
+              30
+            ],
+            [
+              4,
+              18,
+              2,
+              20
+            ],
+            [
+              6,
+              12,
+              10,
+              30
+            ],
+            [
+              12,
+              6,
+              6,
+              16
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 0.30198019801980197,
+          "macro_class_accuracy": 0.1746969696969697,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            0.44166666666666665,
+            0.09090909090909091,
+            0.25,
+            0.09090909090909091,
+            0.0
+          ],
+          "confusion": [
+            [
+              53,
+              3,
+              32,
+              26,
+              6
+            ],
+            [
+              16,
+              2,
+              0,
+              2,
+              2
+            ],
+            [
+              10,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              16,
+              2,
+              0,
+              2,
+              2
+            ],
+            [
+              18,
+              0,
+              2,
+              2,
+              0
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 0.31683168316831684,
+          "macro_class_accuracy": 0.1862689393939394,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            0.4666666666666667,
+            0.1875,
+            0.09090909090909091,
+            0.0
+          ],
+          "confusion": [
+            [
+              56,
+              14,
+              18,
+              32
+            ],
+            [
+              19,
+              6,
+              2,
+              5
+            ],
+            [
+              16,
+              4,
+              2,
+              0
+            ],
+            [
+              28,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 0.44554455445544555,
+          "macro_class_accuracy": 0.4464430894308943,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            0.44166666666666665,
+            0.45121951219512196
+          ],
+          "confusion": [
+            [
+              53,
+              67
+            ],
+            [
+              45,
+              37
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    },
+    "66->66": {
+      "examples": 202,
+      "exact_frame_correct": 202,
+      "exact_frame_accuracy": 1.0,
+      "macro_class_accuracy": 1.0,
+      "fields": {
+        "kind": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "fact",
+            "request"
+          ],
+          "class_support": [
+            112,
+            90
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              112,
+              0
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        "subject": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "lamp",
+            "heater",
+            "fan",
+            "door",
+            "budget"
+          ],
+          "class_support": [
+            32,
+            38,
+            28,
+            22,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              32,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              38,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              28,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "predicate": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "on",
+            "off",
+            "open",
+            "closed",
+            "limit"
+          ],
+          "class_support": [
+            52,
+            46,
+            12,
+            10,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              52,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              46,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "polarity": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "positive",
+            "negative"
+          ],
+          "class_support": [
+            134,
+            68
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              134,
+              0
+            ],
+            [
+              0,
+              68
+            ]
+          ]
+        },
+        "certainty": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "certain",
+            "possible"
+          ],
+          "class_support": [
+            114,
+            88
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              114,
+              0
+            ],
+            [
+              0,
+              88
+            ]
+          ]
+        },
+        "condition": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "rain",
+            "cold",
+            "night"
+          ],
+          "class_support": [
+            60,
+            44,
+            58,
+            40
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              60,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              44,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              58,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              40
+            ]
+          ]
+        },
+        "amount": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "10",
+            "20",
+            "50",
+            "100"
+          ],
+          "class_support": [
+            120,
+            22,
+            16,
+            22,
+            22
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              22,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              22
+            ]
+          ]
+        },
+        "comparator": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "at-most",
+            "at-least",
+            "exact"
+          ],
+          "class_support": [
+            120,
+            32,
+            22,
+            28
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              32,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              28
+            ]
+          ]
+        },
+        "unit": {
+          "accuracy": 1.0,
+          "macro_class_accuracy": 1.0,
+          "macro_policy": "mean_over_classes_present_in_gold",
+          "classes": [
+            "none",
+            "USD"
+          ],
+          "class_support": [
+            120,
+            82
+          ],
+          "class_accuracy": [
+            1.0,
+            1.0
+          ],
+          "confusion": [
+            [
+              120,
+              0
+            ],
+            [
+              0,
+              82
+            ]
+          ]
+        }
+      },
+      "wire_bytes": 12952,
+      "payload_bytes": 12928,
+      "header_bytes": 24,
+      "packets": 2
+    }
+  }
+}

@@ -23,6 +23,7 @@ The demo uses seed 44, chosen before evaluation. Output is marked model_predicti
 
 ## Scope and documentation
 
+- [Optional local multilingual translation gateway](docs/MULTILINGUAL_GATEWAY.md), [measured limitations](docs/MULTILINGUAL_RESULTS.md), and [AI communication references](docs/AI_COMMUNICATION_REFERENCES.md). The first backend declares 100 languages; all 24 foreign probe translations remained outside AVL's grammar. Translation is separately resourced and is not general multilingual AVL understanding.
 - [English usage and Python API](docs/USAGE_V2.md), [한국어 사용법](docs/USAGE_V2.ko.md).
 - [Frozen v2 protocol](docs/AVL_V2_PROTOCOL.md), [v2 results](docs/AVL_V2_RESULTS.md).
 - [Post-hoc grammar coverage](antlab/runs/semantic-v2-coverage-20261006.json), [actual vector and English reconstruction example](antlab/runs/semantic-v2-demo-20261006.json).
@@ -31,6 +32,8 @@ The demo uses seed 44, chosen before evaluation. Output is marked model_predicti
 Only saved English templates are accepted, with lamp/heater/fan/door/budget subjects and amounts 10/20/50/100 USD. The encoder's 41-word vocabulary comes from training text only. The caller supplies segment boundaries. Arbitrary prose, new entities or numbers, nested scope and automatic summarization remain unsupported.
 
 Canonical rendering uses predicted fields, retains negation/conditions/uncertainty and rejects contradictory combinations. It does not restore original wording or verify correctness. Sender and receiver must use the same checkpoint: the codec version is not model identity. Vectors do not provide anonymization, authentication or network delivery.
+
+A [post-hoc cross-play test](docs/AI_COMMUNICATION_REFERENCES.md#avl-cross-play-diagnostic) measured 100% exact recovery for each matching checkpoint but only 0.1650% averaged across six different-checkpoint pairs on 202 joint heldout inputs. Current independently trained AVL instances do not share a common vector language.
 
 To repeat training, use a new output folder:
 

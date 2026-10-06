@@ -1,0 +1,986 @@
+{
+  "format": "avl-multilingual-gateway-probe-v1",
+  "status": "post_hoc_illustrative_probe",
+  "scope": "Manually authored synthetic parallel examples; no native-speaker benchmark or all-language claim.",
+  "training_performed": false,
+  "avl_seed": 44,
+  "fixture_sha256": "60b8fb6fb063ad3ee3ae0d7dd96298ac4385eb02b3e244d0a3df36d850146c84",
+  "source_hashes": {
+    "antlab/local_translation.py": "99720774b352c1600bdf201cfe05903f94acc40bb125caaea1656f9e2d830105",
+    "antlab/translation_gateway.py": "7baae83c2d05fe012ae918db82fc5cfad0b3a94abae35bf32f5116b8470b4973",
+    "antlab/multilingual_probe.py": "3af7d1bfc2bc20e8d5833b1bd8e03b2699aa06600162aa1a31fa25e796177f5f",
+    "antlab/semantic_render.py": "e7467efb9353eb72f2f594e4bb1446cd6d35aa02a71d9d9259a84616af6959c2",
+    "antlab/semantic_v2_demo.py": "bab5d0294634aba8b38930bdf5c48b26253b06adba2b924a8c2c9e495d0d0bd0",
+    "antlab/semantic_v2_model.py": "e2e7e269efe648780ef56c2931b8db44d0be7bfbd56846ff233400b09e5c9f6b"
+  },
+  "avl_checkpoint_sha256": "a9d1f5348a67161e4ad33249d44e8c1633fe6f147a6d5c3ac754dd787e198ce2",
+  "translation_model": {
+    "model_id": "facebook/m2m100_418M",
+    "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636",
+    "declared_languages": 100,
+    "license_from_card": "MIT",
+    "model_card": "https://huggingface.co/facebook/m2m100_418M",
+    "files": {
+      "config.json": {
+        "bytes": 908,
+        "sha256": "df0ae43e4e4b0d7e3c97b7f447857a70ef6b6a2aa1f145cedbcc730d95f67134"
+      },
+      "generation_config.json": {
+        "bytes": 233,
+        "sha256": "aed76366507333ddbb8bd49960f23c82fe6446b3319a46a54befdb45324ccf61"
+      },
+      "tokenizer_config.json": {
+        "bytes": 298,
+        "sha256": "a53e6aa83da0b82565ed90c3849056307a9453843322ac5b8439ec4b9497fe48"
+      },
+      "special_tokens_map.json": {
+        "bytes": 1140,
+        "sha256": "c1a4f86c3874d279ae1b2a05162858db5dd6c61665d84223ed886cbcff08fda6"
+      },
+      "vocab.json": {
+        "bytes": 3708092,
+        "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+      },
+      "sentencepiece.bpe.model": {
+        "bytes": 2423393,
+        "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+      },
+      "pytorch_model.bin": {
+        "bytes": 1935796948,
+        "sha256": "d907ea45e4e4b9db163382a6674f6218b3c59566fe06d77f4055c208b4e87ed1"
+      }
+    },
+    "total_bytes": 1941931012
+  },
+  "translation_parameters": 483905536,
+  "runtime": {
+    "device": "cpu",
+    "threads": 2,
+    "seconds": 95.59308140003122,
+    "torch": "2.13.0+xpu",
+    "transformers": "4.57.6",
+    "sentencepiece": "0.2.2"
+  },
+  "source_text_sent_to_remote_service": false,
+  "source_retained": true,
+  "foreign_summary": {
+    "languages": 8,
+    "inputs": 24,
+    "successful_translation_calls": 24,
+    "status_counts": {
+      "out_of_scope": 24
+    },
+    "admitted_inputs": 0,
+    "exact_frames_on_admitted": 0,
+    "exact_frames_per_all_inputs": 0.0,
+    "exact_frame_accuracy_on_admitted": null,
+    "translation_semantic_accuracy": "not scored by a native-speaker or reference translation metric"
+  },
+  "language_rows": [
+    {
+      "language": "English",
+      "code": "en",
+      "records": [
+        {
+          "index": 0,
+          "status": "encoded",
+          "source": "It is certain that the lamp is on.",
+          "source_lang": "en",
+          "translation": "It is certain that the lamp is on.",
+          "translation_lang": "en",
+          "translation_status": "bypassed_english",
+          "predicted_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": true
+        },
+        {
+          "index": 1,
+          "status": "encoded",
+          "source": "When it rains, it is possible that the door is not closed.",
+          "source_lang": "en",
+          "translation": "When it rains, it is possible that the door is not closed.",
+          "translation_lang": "en",
+          "translation_status": "bypassed_english",
+          "predicted_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": true
+        },
+        {
+          "index": 2,
+          "status": "encoded",
+          "source": "Please make sure that the budget limit is at most 20 USD.",
+          "source_lang": "en",
+          "translation": "Please make sure that the budget limit is at most 20 USD.",
+          "translation_lang": "en",
+          "translation_status": "bypassed_english",
+          "predicted_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": true
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 0,
+        "translation_seconds": 0.0,
+        "model_seconds": 0.0033798000076785684,
+        "translation_input_characters": 0,
+        "translation_output_characters": 0,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 204,
+        "payload_bytes": 192
+      }
+    },
+    {
+      "language": "Korean",
+      "code": "ko",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "램프가 켜져 있는 것은 확실하다.",
+          "source_lang": "ko",
+          "translation": "It is clear that the lamp is lighted.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "비가 오면 문이 닫혀 있지 않을 가능성이 있다.",
+          "source_lang": "ko",
+          "translation": "When the rain comes, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "예산 한도가 최대 20 USD가 되도록 해 주세요.",
+          "source_lang": "ko",
+          "translation": "Please make the budget limit up to $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 12.965897299989592,
+        "model_seconds": 0.0,
+        "translation_input_characters": 72,
+        "translation_output_characters": 124,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "Japanese",
+      "code": "ja",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "ランプがついていることは確かです。",
+          "source_lang": "ja",
+          "translation": "I am sure that the lamp is there.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "雨が降るとき、ドアが閉まっていない可能性があります。",
+          "source_lang": "ja",
+          "translation": "When the rain falls, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "予算の上限が最大20 USDになるようにしてください。",
+          "source_lang": "ja",
+          "translation": "Make sure your budget limit is up to $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 7.5847126000444405,
+        "model_seconds": 0.0,
+        "translation_input_characters": 70,
+        "translation_output_characters": 122,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "Chinese",
+      "code": "zh",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "可以确定，灯是开着的。",
+          "source_lang": "zh",
+          "translation": "You can be sure that the light is open.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "下雨时，门有可能没有关上。",
+          "source_lang": "zh",
+          "translation": "When it rains, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "请确保预算上限不超过20 USD。",
+          "source_lang": "zh",
+          "translation": "Please make sure the budget limit does not exceed $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 7.728592700033914,
+        "model_seconds": 0.0,
+        "translation_input_characters": 41,
+        "translation_output_characters": 135,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "Spanish",
+      "code": "es",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "Es cierto que la lámpara está encendida.",
+          "source_lang": "es",
+          "translation": "It is true that the lamp is lighted.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "Cuando llueve, es posible que la puerta no esté cerrada.",
+          "source_lang": "es",
+          "translation": "When it rains, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "Asegúrate de que el límite del presupuesto sea como máximo 20 USD.",
+          "source_lang": "es",
+          "translation": "Make sure the budget limit is up to $20 USD.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 7.7560104000149295,
+        "model_seconds": 0.0,
+        "translation_input_characters": 162,
+        "translation_output_characters": 122,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "French",
+      "code": "fr",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "Il est certain que la lampe est allumée.",
+          "source_lang": "fr",
+          "translation": "It is certain that the lamp is lighted.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "Quand il pleut, il est possible que la porte ne soit pas fermée.",
+          "source_lang": "fr",
+          "translation": "When it rains, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "Veuillez assurer que la limite du budget est au maximum de 20 USD.",
+          "source_lang": "fr",
+          "translation": "Please make sure that the budget limit is up to $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 8.656755900010467,
+        "model_seconds": 0.0,
+        "translation_input_characters": 170,
+        "translation_output_characters": 133,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "German",
+      "code": "de",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "Es ist sicher, dass die Lampe an ist.",
+          "source_lang": "de",
+          "translation": "It is sure that the lamp is on.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "Wenn es regnet, ist es möglich, dass die Tür nicht geschlossen ist.",
+          "source_lang": "de",
+          "translation": "If it rains, it is possible that the door is not closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "Bitte stellen Sie sicher, dass das Budgetlimit maximal 20 USD ist.",
+          "source_lang": "de",
+          "translation": "Please make sure that the budget limit is $20 maximum.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 8.289816999982577,
+        "model_seconds": 0.0,
+        "translation_input_characters": 170,
+        "translation_output_characters": 141,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "Russian",
+      "code": "ru",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "Несомненно, лампа включена.",
+          "source_lang": "ru",
+          "translation": "The lamp is enabled.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "Когда идет дождь, возможно, дверь не закрыта.",
+          "source_lang": "ru",
+          "translation": "When it rains, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "Пожалуйста, убедитесь, что лимит бюджета не превышает 20 USD.",
+          "source_lang": "ru",
+          "translation": "Please make sure that the budget limit does not exceed $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 7.88355720002437,
+        "model_seconds": 0.0,
+        "translation_input_characters": 133,
+        "translation_output_characters": 121,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    },
+    {
+      "language": "Arabic",
+      "code": "ar",
+      "records": [
+        {
+          "index": 0,
+          "status": "out_of_scope",
+          "source": "من المؤكد أن المصباح مضاء.",
+          "source_lang": "ar",
+          "translation": "The lamp is clear.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "lamp",
+            "predicate": "on",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 1,
+          "status": "out_of_scope",
+          "source": "عندما تمطر، من الممكن أن يكون الباب غير مغلق.",
+          "source_lang": "ar",
+          "translation": "When it rains, the door may not be closed.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "fact",
+            "subject": "door",
+            "predicate": "closed",
+            "polarity": "negative",
+            "certainty": "possible",
+            "condition": "rain",
+            "amount": "none",
+            "comparator": "none",
+            "unit": "none"
+          },
+          "exact_frame_if_encoded": null
+        },
+        {
+          "index": 2,
+          "status": "out_of_scope",
+          "source": "يرجى التأكد من أن حد الميزانية لا يتجاوز 20 USD.",
+          "source_lang": "ar",
+          "translation": "Please make sure that the budget limit does not exceed $20.",
+          "translation_lang": "en",
+          "translation_status": "translated",
+          "predicted_frame": null,
+          "intended_frame": {
+            "kind": "request",
+            "subject": "budget",
+            "predicate": "limit",
+            "polarity": "positive",
+            "certainty": "certain",
+            "condition": "none",
+            "amount": "20",
+            "comparator": "at-most",
+            "unit": "USD"
+          },
+          "exact_frame_if_encoded": null
+        }
+      ],
+      "sender_metadata": {
+        "backend": "local-m2m100-418M",
+        "translation_calls": 3,
+        "translation_seconds": 7.374284200021066,
+        "model_seconds": 0.0,
+        "translation_input_characters": 119,
+        "translation_output_characters": 119,
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "measured": false,
+          "scope": "translation backend resources are separate from the trained semantic model"
+        },
+        "scope": "English-pivot interface; multilingual semantic accuracy not validated",
+        "originals_retained_locally": true,
+        "wire_bytes": 0,
+        "payload_bytes": 0
+      }
+    }
+  ],
+  "reverse_translation_predictions": [
+    {
+      "source": "It is certain that the lamp is on.",
+      "target_lang": "ko",
+      "translation": "램프가 켜져 있는지 확실하다.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "When it rains, it is possible that the door is not closed.",
+      "target_lang": "ko",
+      "translation": "비가 내리면 문이 닫혀 있지 않을 수도 있습니다.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "Please make sure that the budget limit is at most 20 USD.",
+      "target_lang": "ko",
+      "translation": "예산 제한이 최대 20 달러인지 확인하십시오.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "It is certain that the lamp is on.",
+      "target_lang": "ja",
+      "translation": "ライトが開いているのは確かです。",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "When it rains, it is possible that the door is not closed.",
+      "target_lang": "ja",
+      "translation": "雨が降ると、ドアが閉まらない可能性があります。",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "Please make sure that the budget limit is at most 20 USD.",
+      "target_lang": "ja",
+      "translation": "予算制限が最大20ドルであることを確認してください。",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "It is certain that the lamp is on.",
+      "target_lang": "es",
+      "translation": "Es seguro que la lámpara está en marcha.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "When it rains, it is possible that the door is not closed.",
+      "target_lang": "es",
+      "translation": "Cuando llueve, es posible que la puerta no esté cerrada.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    },
+    {
+      "source": "Please make sure that the budget limit is at most 20 USD.",
+      "target_lang": "es",
+      "translation": "Por favor, asegúrese de que el límite presupuestario es de hasta 20 USD.",
+      "status": "translation_prediction",
+      "semantic_preservation": "not automatically verified"
+    }
+  ]
+}
