@@ -1,0 +1,1563 @@
+{
+  "status": "complete",
+  "smoke_only": true,
+  "config": {
+    "format": "act-english-connected-smoke-1",
+    "smoke_only": true,
+    "seed": 105,
+    "steps": 400,
+    "batch_size": 32,
+    "learning_rate": 0.003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "rounds": 2,
+    "units": 2,
+    "output_unit": 0,
+    "max_new_tokens": 8,
+    "threads": 2,
+    "max_seconds": 900,
+    "optimizer": "AdamW",
+    "objective": "next_character_cross_entropy_with_EOS"
+  },
+  "interpretation": "Tiny fixed English YES/NO lamp format; no generic language or scaling claim.",
+  "training": {
+    "steps": 400,
+    "seed": 105,
+    "examples": 12,
+    "batch_size": 32,
+    "logs": [
+      {
+        "step": 100,
+        "loss": 0.20367072522640228,
+        "gradient_norm": 0.07519062608480453
+      },
+      {
+        "step": 200,
+        "loss": 0.20623527467250824,
+        "gradient_norm": 0.5133568048477173
+      },
+      {
+        "step": 300,
+        "loss": 0.20776572823524475,
+        "gradient_norm": 0.345498263835907
+      },
+      {
+        "step": 400,
+        "loss": 0.197048157453537,
+        "gradient_norm": 0.0081185232847929
+      }
+    ],
+    "seconds": 14.340131399978418,
+    "changed_parameter_tensors": [
+      "embedding.weight",
+      "encoder.weight_ih_l0",
+      "encoder.weight_hh_l0",
+      "encoder.bias_ih_l0",
+      "encoder.bias_hh_l0",
+      "sender.weight",
+      "sender.bias",
+      "query.weight",
+      "query.bias",
+      "key.weight",
+      "key.bias",
+      "receiver.weight",
+      "receiver.bias",
+      "update.weight_ih",
+      "update.weight_hh",
+      "update.bias_ih",
+      "update.bias_hh",
+      "decoder.weight_ih_l0",
+      "decoder.weight_hh_l0",
+      "decoder.bias_ih_l0",
+      "decoder.bias_hh_l0",
+      "head.weight",
+      "head.bias"
+    ]
+  },
+  "evaluations": {
+    "train": {
+      "connected": {
+        "condition": "connected",
+        "examples": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "ids": [
+          "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+          "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+          "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+          "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+          "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+          "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+          "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+          "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+          "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+          "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+          "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+          "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is on."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 12,
+        "logical_payload_bytes": 3072
+      },
+      "blocked": {
+        "condition": "blocked",
+        "examples": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "ids": [
+          "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+          "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+          "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+          "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+          "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+          "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+          "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+          "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+          "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+          "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+          "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+          "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is on."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 12,
+        "logical_payload_bytes": 0
+      },
+      "remote_swapped": {
+        "condition": "remote_swapped",
+        "examples": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "ids": [
+          "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+          "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+          "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+          "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+          "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+          "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+          "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+          "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+          "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+          "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+          "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+          "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is off."
+          ]
+        ],
+        "expected": [
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 12,
+        "logical_payload_bytes": 3072
+      },
+      "blocked_swapped": {
+        "condition": "blocked_swapped",
+        "examples": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "ids": [
+          "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+          "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+          "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+          "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+          "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+          "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+          "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+          "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+          "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+          "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+          "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+          "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is off."
+          ]
+        ],
+        "expected": [
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 12,
+        "logical_payload_bytes": 0
+      },
+      "serial": {
+        "condition": "serial",
+        "examples": 12,
+        "correct": 6,
+        "accuracy": 0.5,
+        "ids": [
+          "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+          "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+          "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+          "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+          "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+          "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+          "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+          "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+          "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+          "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+          "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+          "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Question: Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Is the lamp on?",
+            "Fact: The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "The lamp is on."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is off."
+          ],
+          [
+            "Please tell me: Is the lamp on?",
+            "Fact: The lamp is on."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 12,
+        "logical_payload_bytes": 3072
+      }
+    },
+    "heldout": {
+      "connected": {
+        "condition": "connected",
+        "examples": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "ids": [
+          "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+          "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+          "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+          "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+          "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+          "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+          "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+          "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 8,
+        "logical_payload_bytes": 2048
+      },
+      "blocked": {
+        "condition": "blocked",
+        "examples": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "ids": [
+          "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+          "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+          "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+          "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+          "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+          "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+          "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+          "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 8,
+        "logical_payload_bytes": 0
+      },
+      "remote_swapped": {
+        "condition": "remote_swapped",
+        "examples": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "ids": [
+          "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+          "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+          "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+          "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+          "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+          "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+          "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+          "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ]
+        ],
+        "expected": [
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 8,
+        "logical_payload_bytes": 2048
+      },
+      "blocked_swapped": {
+        "condition": "blocked_swapped",
+        "examples": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "ids": [
+          "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+          "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+          "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+          "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+          "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+          "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+          "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+          "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ]
+        ],
+        "expected": [
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 8,
+        "logical_payload_bytes": 0
+      },
+      "serial": {
+        "condition": "serial",
+        "examples": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "ids": [
+          "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+          "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+          "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+          "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+          "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+          "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+          "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+          "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad"
+        ],
+        "local_texts": [
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Question: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "The lamp is on now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is off now."
+          ],
+          [
+            "Please tell me: Is the lamp on now?",
+            "Fact: The lamp is on now."
+          ]
+        ],
+        "expected": [
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES",
+          "NO",
+          "YES"
+        ],
+        "token_ids": [
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ],
+          [
+            89,
+            69,
+            83,
+            2
+          ]
+        ],
+        "texts": [
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES",
+          "YES"
+        ],
+        "eos_terminated": 8,
+        "logical_payload_bytes": 2048
+      }
+    }
+  }
+}

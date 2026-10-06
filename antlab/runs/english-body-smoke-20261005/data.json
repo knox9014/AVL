@@ -1,0 +1,206 @@
+{
+  "train": [
+    {
+      "id": "edef099a367c9154513c6a39e82c26b124d6840dc0d64420b92798f224debea6",
+      "local_texts": [
+        "Question: Is the lamp on?",
+        "The lamp is off."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "d177ccac6ce1b11beda388d9fb851fdf3bc2797e996dc20bb66922e460602f61",
+      "local_texts": [
+        "Question: Is the lamp on?",
+        "The lamp is on."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "17eea5f36cd8239c4cc19045fc5efeb578184d09b180785099668df6d75c3b73",
+      "local_texts": [
+        "Question: Is the lamp on?",
+        "Fact: The lamp is off."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "1f088d8c6b1e033453485b12e67aecce56cbf383eb8f0d641f61016b4fea62b7",
+      "local_texts": [
+        "Question: Is the lamp on?",
+        "Fact: The lamp is on."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "5ce257d54ba62a8cbd6a0cdbd366bb70d0a7838474afa37ebbc6f88c8f383b59",
+      "local_texts": [
+        "Is the lamp on?",
+        "The lamp is off."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "3233ecee8de7a74fb7fcfc9cc683b11ecec07b7850ed40b4dfec7586d6392809",
+      "local_texts": [
+        "Is the lamp on?",
+        "The lamp is on."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "1174ea538d8138a03337a9063f5775f18dc6a29f23562d4cf7b95d39b85fc1fd",
+      "local_texts": [
+        "Is the lamp on?",
+        "Fact: The lamp is off."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "0388b8d8bc05caf57bd0f944f231868a58877b6b12e2120f8bdbafd7af03a19f",
+      "local_texts": [
+        "Is the lamp on?",
+        "Fact: The lamp is on."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "2a1fc4ea675be7586dfcaef99a34ac6840fe17fad6052463bcf10e18829302e9",
+      "local_texts": [
+        "Please tell me: Is the lamp on?",
+        "The lamp is off."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "d64cfec0e52e4a55dc2acab967c5d288e859f0bd8dc653df0af38e94232e6102",
+      "local_texts": [
+        "Please tell me: Is the lamp on?",
+        "The lamp is on."
+      ],
+      "fact_template": "The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "1f5b5d7379a3074e1ed220da90f00d79c4d778ed8fc7fcc5645e52d3b5a1f9a7",
+      "local_texts": [
+        "Please tell me: Is the lamp on?",
+        "Fact: The lamp is off."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "7f53ae01a4ef95c348392ad73916cbb2f5a3e54600978d9f89f46cf06518e952",
+      "local_texts": [
+        "Please tell me: Is the lamp on?",
+        "Fact: The lamp is on."
+      ],
+      "fact_template": "Fact: The lamp is {state}.",
+      "fact_state": "on",
+      "answer": "YES"
+    }
+  ],
+  "heldout": [
+    {
+      "id": "f2ebab35adc3bc1e583f422b98eca6d1433196fc53c371d061d58217388a6608",
+      "local_texts": [
+        "Question: Is the lamp on now?",
+        "The lamp is off now."
+      ],
+      "fact_template": "The lamp is {state} now.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "eef6a99dc6fea271a0a6f0ab221d6d49180bc2a91316832f812d73b4618fa8d9",
+      "local_texts": [
+        "Question: Is the lamp on now?",
+        "The lamp is on now."
+      ],
+      "fact_template": "The lamp is {state} now.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "5b0e30566019ac8c6e5f05259f82da0c357a5b8c7fcc2641d8bd0529786ac940",
+      "local_texts": [
+        "Question: Is the lamp on now?",
+        "Fact: The lamp is off now."
+      ],
+      "fact_template": "Fact: The lamp is {state} now.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "b4fd96ca848eda0a8dbbec4637a1976743438af490a53fe3df4c15e8bebcddf6",
+      "local_texts": [
+        "Question: Is the lamp on now?",
+        "Fact: The lamp is on now."
+      ],
+      "fact_template": "Fact: The lamp is {state} now.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "24e8cc324c8deb5d50be36621b18e37ed7f1f4b979416510abb0498cb887e4f0",
+      "local_texts": [
+        "Please tell me: Is the lamp on now?",
+        "The lamp is off now."
+      ],
+      "fact_template": "The lamp is {state} now.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "5460f30dcd5123d3fd7f5c352858d3d6c824352d3f8e9e8a6ed08b1c30b59fee",
+      "local_texts": [
+        "Please tell me: Is the lamp on now?",
+        "The lamp is on now."
+      ],
+      "fact_template": "The lamp is {state} now.",
+      "fact_state": "on",
+      "answer": "YES"
+    },
+    {
+      "id": "715ac5ee0a932d65486c1b484ce3438af20531e3c44ac8ebe4de1271745c831b",
+      "local_texts": [
+        "Please tell me: Is the lamp on now?",
+        "Fact: The lamp is off now."
+      ],
+      "fact_template": "Fact: The lamp is {state} now.",
+      "fact_state": "off",
+      "answer": "NO"
+    },
+    {
+      "id": "3c8043fcb47f8e313f518e83fde19873927c4d3f152abfb655f837d6bca099ad",
+      "local_texts": [
+        "Please tell me: Is the lamp on now?",
+        "Fact: The lamp is on now."
+      ],
+      "fact_template": "Fact: The lamp is {state} now.",
+      "fact_state": "on",
+      "answer": "YES"
+    }
+  ]
+}

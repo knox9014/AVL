@@ -1,0 +1,62 @@
+{
+  "posthoc": true,
+  "checkpoint": "antlab\\runs\\english-body-smoke-20261005\\checkpoint.pt",
+  "optimizer_steps": 0,
+  "interpretation": "Frozen exploratory path inspection; differences are not semantic understanding or a causal root-cause proof.",
+  "pairs": [
+    {
+      "question": "Question: Is the lamp on?",
+      "fact_template": "The lamp is {state}.",
+      "remote_first_message_maxabs": 0.28830379247665405,
+      "output_state_maxabs": 8.7738037109375e-05,
+      "first_logits_maxabs": 1.430511474609375e-06,
+      "yes_minus_no_off": 0.14134788513183594,
+      "yes_minus_no_on": 0.14134788513183594
+    },
+    {
+      "question": "Question: Is the lamp on?",
+      "fact_template": "Fact: The lamp is {state}.",
+      "remote_first_message_maxabs": 0.28770628571510315,
+      "output_state_maxabs": 8.761882781982422e-05,
+      "first_logits_maxabs": 1.1920928955078125e-06,
+      "yes_minus_no_off": 0.14134788513183594,
+      "yes_minus_no_on": 0.14134788513183594
+    },
+    {
+      "question": "Is the lamp on?",
+      "fact_template": "The lamp is {state}.",
+      "remote_first_message_maxabs": 0.28830379247665405,
+      "output_state_maxabs": 8.815526962280273e-05,
+      "first_logits_maxabs": 1.430511474609375e-06,
+      "yes_minus_no_off": 0.14134597778320312,
+      "yes_minus_no_on": 0.14134693145751953
+    },
+    {
+      "question": "Is the lamp on?",
+      "fact_template": "Fact: The lamp is {state}.",
+      "remote_first_message_maxabs": 0.2877063453197479,
+      "output_state_maxabs": 8.797645568847656e-05,
+      "first_logits_maxabs": 1.430511474609375e-06,
+      "yes_minus_no_off": 0.14134597778320312,
+      "yes_minus_no_on": 0.14134693145751953
+    },
+    {
+      "question": "Please tell me: Is the lamp on?",
+      "fact_template": "The lamp is {state}.",
+      "remote_first_message_maxabs": 0.28830379247665405,
+      "output_state_maxabs": 8.779764175415039e-05,
+      "first_logits_maxabs": 1.430511474609375e-06,
+      "yes_minus_no_off": 0.14134788513183594,
+      "yes_minus_no_on": 0.14134788513183594
+    },
+    {
+      "question": "Please tell me: Is the lamp on?",
+      "fact_template": "Fact: The lamp is {state}.",
+      "remote_first_message_maxabs": 0.2877063453197479,
+      "output_state_maxabs": 8.761882781982422e-05,
+      "first_logits_maxabs": 1.1920928955078125e-06,
+      "yes_minus_no_off": 0.14134788513183594,
+      "yes_minus_no_on": 0.14134788513183594
+    }
+  ]
+}

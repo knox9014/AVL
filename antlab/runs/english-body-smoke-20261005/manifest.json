@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "sources": {
+    "antlab/english_connected_model.py": "442a47a7c8076ddd1c5dcbf83b6bbec694e3dffe8afcb83d275eee14cdec3f57",
+    "antlab/english_connected_smoke.py": "6142590332eef82e0a98050e6442e44e09e8aa2d88a00cd145eecd68ed43b4dd",
+    "docs/research/2026-10-05-english-connected-body.md": "fe75ae5d858768765a3739a5deb1109f259dc6fb4568a87f29539f962f2d3939"
+  },
+  "files": {
+    "report.json": "28cd8c3c8892159a7c979c9752e7a7fb19dd8e62f19a27651c512ef08c267e54",
+    "config.json": "6afc7d51c1d0bcdaa6622040fd37cc70ceffb4513cd7f68f77573d96081173f8",
+    "data.json": "f8d5092317f862b1e35e23b762d2691987a168483d47eca5874ff16c325fe37b",
+    "checkpoint.pt": "71103c4bccee4ea0c1bb5687a67f5a1665a597ed48ab85ce0a890feb6326a7c5"
+  }
+}
