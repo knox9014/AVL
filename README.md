@@ -1,5 +1,7 @@
 # AVL — AI Vector Language
 
+[English](README.md) | [한국어](README.ko.md)
+
 AVL explores learned vector communication that preserves useful meaning between AI units. Its long-term goal is to let shared neural units use communicated information across multiple tasks, with explicit checks for semantic retention and resource cost.
 
 **Status: an early research prototype.** The current model has 98,928 shared parameters and 16-dimensional float32 messages. It can encode local English text, exchange vectors, and generate characters. The first YES/NO experiment did **not** learn to use remote facts: every input produced `YES`, with 50% accuracy. A useful general-purpose language, lossless compression, and intelligence gains from adding units have not been demonstrated.
