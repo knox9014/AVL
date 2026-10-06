@@ -40,6 +40,43 @@ class TranslationGatewayTests(unittest.TestCase):
         torch.manual_seed(44)
         self.model = SemanticNet().eval()
 
+    def test_duplicate_segments_translate_once_but_keep_every_record(self):
+        backend = FakeTranslator({('원문', 'ko', 'en'): CANONICAL})
+        gateway = TranslationGateway(self.model, backend)
+        sent = gateway.encode(['원문', '원문'], 'ko')
+        self.assertEqual(sent['translations'], [CANONICAL, CANONICAL])
+        self.assertEqual(sent['supported_indices'], [0, 1])
+        self.assertEqual(unpack_vectors(sent['packet']).shape, (2, 16))
+        self.assertEqual(len(backend.calls), 1)
+        self.assertEqual(sent['metadata']['translation_reused_segments'], 1)
+        gateway.encode(['원문'], 'ko')
+        self.assertEqual(len(backend.calls), 2)  # No persistent source-text cache.
+
+    def test_optional_batch_backend_keeps_order_and_per_segment_failure(self):
+        class BatchBackend:
+            name = 'test-batch'
+            def supports(self, source, target):
+                return True
+            def translate_many(self, texts, source, target):
+                return [CANONICAL if text == '성공' else None for text in texts]
+            def translate(self, *args):
+                raise AssertionError('scalar path would waste work')
+        sent = TranslationGateway(self.model, BatchBackend()).encode(['성공', '실패', '성공'], 'ko')
+        self.assertEqual([r['status'] for r in sent['records']], ['encoded', 'translation_unavailable', 'encoded'])
+        self.assertEqual(sent['translations'], [CANONICAL, None, CANONICAL])
+        self.assertEqual(sent['metadata']['translation_batch_calls'], 1)
+        self.assertEqual(sent['metadata']['translation_calls'], 1)
+        self.assertEqual(sent['sources'], ['성공', '실패', '성공'])
+
+    def test_target_duplicate_frames_reuse_request_local_translation(self):
+        backend = FakeTranslator({(CANONICAL, 'en', 'ko'): '번역'})
+        gateway = TranslationGateway(self.model, backend)
+        packet = gateway.encode([CANONICAL, CANONICAL], 'en')['packet']
+        with patch('antlab.translation_gateway.receive_packet', return_value=[dict(FRAME), dict(FRAME)]):
+            result = gateway.decode(packet, 'ko')
+        self.assertEqual(result['texts'], ['번역', '번역'])
+        self.assertEqual(len(backend.calls), 1)
+
     def test_original_translation_retention_and_conservative_admission(self):
         originals = ['  비가 오면 램프가 켜져 있지 않을 수도 있다.\n', '예산 17달러', '램프가 켜져 있다.']
         translated = [CANONICAL, 'It is certain that the budget limit is exactly 17 USD.', 'The lamp is on.']

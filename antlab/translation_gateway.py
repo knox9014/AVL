@@ -59,6 +59,8 @@ class TranslationGateway:
     def _metadata(self):
         return dict(backend=self.translator.name if self.translator is not None else None,
                     translation_calls=0, translation_seconds=0., model_seconds=0.,
+                    translation_batch_calls=0, translation_segments=0,
+                    translation_unique_segments=0, translation_reused_segments=0,
                     translation_input_characters=0, translation_output_characters=0,
                     cost=dict(amount=None, currency=None, measured=False,
                               scope='translation backend resources are separate from the trained semantic model'),
@@ -88,6 +90,43 @@ class TranslationGateway:
         finally:
             metadata['translation_seconds'] += time.perf_counter() - started
 
+    def _translate_many(self, texts, source_lang, target_lang, metadata):
+        # Request-local deduplication only: never retain user text in a cache.
+        unique = list(dict.fromkeys(texts))
+        metadata['translation_segments'] += len(texts)
+        metadata['translation_unique_segments'] += len(unique)
+        metadata['translation_reused_segments'] += len(texts) - len(unique)
+        batch = getattr(self.translator, 'translate_many', None)
+        if not unique:
+            return []
+        if not callable(batch):
+            results = [self._translate(text, source_lang, target_lang, metadata) for text in unique]
+        else:
+            started = time.perf_counter()
+            try:
+                try:
+                    supported = self.translator.supports(source_lang, target_lang)
+                    if not isinstance(supported, bool):
+                        raise TypeError('translator supports must return a boolean')
+                    if supported:
+                        metadata['translation_calls'] += 1
+                        metadata['translation_batch_calls'] += 1
+                        metadata['translation_input_characters'] += sum(map(len, unique))
+                        translated = batch(unique, source_lang, target_lang)
+                        if not isinstance(translated, list) or len(translated) != len(unique):
+                            raise TypeError('batch translator must preserve segment count')
+                        results = [(value, 'translated') if isinstance(value, str) and value.strip()
+                                   else (None, 'translation_unavailable') for value in translated]
+                        metadata['translation_output_characters'] += sum(len(value) for value, _ in results if value is not None)
+                    else:
+                        results = [(None, 'unsupported_language')] * len(unique)
+                except TranslationError:
+                    results = [(None, 'translation_unavailable')] * len(unique)
+            finally:
+                metadata['translation_seconds'] += time.perf_counter() - started
+        by_source = dict(zip(unique, results))
+        return [by_source[text] for text in texts]
+
     @torch.inference_mode()
     def encode(self, texts: list[str], source_lang: str):
         """Retain originals, translate to English, admit conservatively, then encode.
@@ -102,11 +141,10 @@ class TranslationGateway:
         sources = list(texts)
         translations, records, supported_indices = [], [], []
         metadata = self._metadata()
+        translated_rows = ([(text, 'bypassed_english') for text in sources] if source_lang == 'en'
+                           else self._translate_many(sources, source_lang, 'en', metadata))
         for index, text in enumerate(sources):
-            if source_lang == 'en':
-                translated, translation_status = text, 'bypassed_english'
-            else:
-                translated, translation_status = self._translate(text, source_lang, 'en', metadata)
+            translated, translation_status = translated_rows[index]
             translations.append(translated)
             if translated is None:
                 status = translation_status
@@ -146,22 +184,24 @@ class TranslationGateway:
         frames = receive_packet(self.model, packet)
         metadata['model_seconds'] += time.perf_counter() - started
         canonical_english, texts, records = [], [], []
-        for index, frame in enumerate(frames):
+        for frame in frames:
             try:
-                english = render_meaning(frame)
+                canonical_english.append(render_meaning(frame))
             except ValueError:
                 canonical_english.append(None)
+        valid = [text for text in canonical_english if text is not None]
+        translated_rows = iter([(text, 'bypassed_english') for text in valid] if target_lang == 'en'
+                               else self._translate_many(valid, 'en', target_lang, metadata))
+        for index, frame in enumerate(frames):
+            english = canonical_english[index]
+            if english is None:
                 texts.append(None)
                 records.append(dict(index=index, status='invalid_semantic_prediction',
                                     prediction_status='model_prediction', frame=frame,
                                     canonical_english=None, text=None, target_lang=target_lang,
                                     output_lang=None, translation_status='not_attempted'))
                 continue
-            canonical_english.append(english)
-            if target_lang == 'en':
-                translated, translation_status = english, 'bypassed_english'
-            else:
-                translated, translation_status = self._translate(english, 'en', target_lang, metadata)
+            translated, translation_status = next(translated_rows)
             available = translated is not None
             text = translated if available else english
             texts.append(text)

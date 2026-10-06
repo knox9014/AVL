@@ -24,6 +24,7 @@ The demo uses seed 44, chosen before evaluation. Output is marked model_predicti
 ## Scope and documentation
 
 - [Optional local multilingual translation gateway](docs/MULTILINGUAL_GATEWAY.md), [measured limitations](docs/MULTILINGUAL_RESULTS.md), and [AI communication references](docs/AI_COMMUNICATION_REFERENCES.md). The first backend declares 100 languages; all 24 foreign probe translations remained outside AVL's grammar. Translation is separately resourced and is not general multilingual AVL understanding.
+- [Batch translation efficiency](docs/TRANSLATION_EFFICIENCY.md): request-local reuse and bounded batches reduced observed inference time from 94 s to 38 s on the synthetic workload, with identical outputs and about 2.1% more peak process memory. Meaning coverage remains unchanged.
 - [English usage and Python API](docs/USAGE_V2.md), [한국어 사용법](docs/USAGE_V2.ko.md).
 - [Frozen v2 protocol](docs/AVL_V2_PROTOCOL.md), [v2 results](docs/AVL_V2_RESULTS.md).
 - [Post-hoc grammar coverage](antlab/runs/semantic-v2-coverage-20261006.json), [actual vector and English reconstruction example](antlab/runs/semantic-v2-demo-20261006.json).

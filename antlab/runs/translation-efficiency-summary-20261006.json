@@ -1,0 +1,41 @@
+{
+  "format": "avl-translation-efficiency-summary-v1",
+  "status": "posthoc_engineering_measurement",
+  "training_performed": false,
+  "scope": "Same 36 synthetic inputs: 24 unique across eight languages and 12 Korean inputs repeating three texts; output equality is not semantic accuracy.",
+  "raw_reports": {
+    "antlab/runs/translation-efficiency-serial-2-20261006.json": "febcc671afda335d897cc213a5b1a2f8bb78c4839f5ff46e6435da49e1b94fa8",
+    "antlab/runs/translation-efficiency-batch-1-20261006.json": "a6ca3f9c9d7bd3992a6ddafb317725d4601f3ed45f9d63766ebf6cea796ac194",
+    "antlab/runs/translation-efficiency-batch-2-20261006.json": "76513e3af733af48afbb4599c4530f31e3f6fe88e203e9085a282571b97c7a5b"
+  },
+  "serial_runs": 1,
+  "batch_runs": 2,
+  "seconds": {
+    "serial": 94.01966190006351,
+    "batches": [
+      38.261031300062314,
+      38.30656929995166
+    ],
+    "batch_mean": 38.28380030000699
+  },
+  "observed_speedup": 2.4558602114546697,
+  "generation_calls": {
+    "serial": 36,
+    "batch_each": 9
+  },
+  "output_mismatches_per_batch": [
+    0,
+    0
+  ],
+  "nonempty_outputs": 36,
+  "avl_admitted_outputs": 0,
+  "peak_working_set_bytes": {
+    "serial": 2675208192,
+    "batches": [
+      2732228608,
+      2731601920
+    ]
+  },
+  "average_peak_working_set_increase_fraction": 0.021197255663906178,
+  "limits": "Loading/warm-up excluded from inference timings; memory peaks include loading. Limited samples, uncontrolled host activity, no statistical significance or universal speed guarantee."
+}

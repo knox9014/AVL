@@ -1,6 +1,9 @@
 # Local multilingual gateway: illustrative results
 
 2026-10-06. This is a post-hoc engineering probe, not a multilingual benchmark.
+The original gateway source snapshot for this probe is commit
+`767016a9a9182101122e720303fc182659702280`; later batching optimizations have
+separate measurements. Historical recorded source hashes are preserved.
 Inputs are three manually authored synthetic parallel examples in each of eight
 foreign languages: Korean, Japanese, Chinese, Spanish, French, German, Russian
 and Arabic. They cover a lamp fact, a conditional negative door fact, and a

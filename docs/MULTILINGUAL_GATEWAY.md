@@ -49,6 +49,20 @@ grammar. It does not silently rewrite arbitrary English into a known frame.
 Repeat `--text` for caller-delimited segments. Language identifiers are explicit
 ISO codes from `--list-languages`; there is no automatic language detector.
 
+The local backend processes up to four unique segments together. Change the
+limit with `--batch-size 1` (individual generation) or `--batch-size 4`.
+Repeated identical segments reuse a translation within that request only;
+their original order, record count and vector count are preserved. There is
+no persistent text cache. Gateway calls use the optional batch API, while
+existing scalar-only translators remain supported.
+
+The limit bounds tokenized segment count and generation rows, not total request
+bytes: a very long individual string still incurs tokenizer work before the
+256-token limit is known. `torch.OutOfMemoryError` makes affected rows unavailable;
+programming errors still propagate. Gateway metadata counts API calls and
+requested/unique/reused segments. An API call may contain multiple model
+generation batches. See [efficiency measurements](TRANSLATION_EFFICIENCY.md).
+
 | Status | Meaning |
 |---|---|
 | `encoded` | English input admitted and encoded; not independently verified truth |

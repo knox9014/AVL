@@ -16,23 +16,28 @@ def main():
     parser.add_argument('--text', action='append')
     parser.add_argument('--translation-only', action='store_true')
     parser.add_argument('--list-languages', action='store_true')
+    parser.add_argument('--batch-size', type=int, default=4)
     args = parser.parse_args()
     if args.list_languages:
         print(json.dumps(dict(declared_languages=list(LANGUAGES), quality='not guaranteed for every language'), indent=2))
         return
     if not args.text:
         parser.error('supply at least one --text or use --list-languages')
-    backend = M2M100Translator(args.model)
+    backend = M2M100Translator(args.model, batch_size=args.batch_size)
     if args.translation_only:
         records = []
-        for text in args.text:
-            if not backend.supports(args.source_lang, args.target_lang):
+        supported = backend.supports(args.source_lang, args.target_lang)
+        try:
+            translations = backend.translate_many(args.text, args.source_lang, args.target_lang) if supported else [None] * len(args.text)
+        except TranslationError:
+            translations = [None] * len(args.text)
+        for text, translated in zip(args.text, translations):
+            if not supported:
                 records.append(dict(source=text, status='unsupported_language', translation=None))
                 continue
-            try:
-                translated = backend.translate(text, args.source_lang, args.target_lang)
+            if translated is not None:
                 records.append(dict(source=text, status='translation_prediction', translation=translated))
-            except TranslationError:
+            else:
                 records.append(dict(source=text, status='translation_unavailable', translation=None))
         result = dict(records=records, source_lang=args.source_lang, target_lang=args.target_lang,
                       backend=backend.name, source_text_sent_to_remote_service=False)
