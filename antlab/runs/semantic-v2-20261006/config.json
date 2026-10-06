@@ -1,0 +1,25 @@
+{
+  "format": "avl-semantic-study-v2",
+  "smoke_only": false,
+  "seeds": [
+    44,
+    55,
+    66
+  ],
+  "steps": 1800,
+  "batch_size": 128,
+  "learning_rate": 0.003,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "threads": 2,
+  "max_seconds": 1800,
+  "optimizer": "AdamW",
+  "objective": "two_view_all_nine_fields_CE_plus_normalized_vector_MSE",
+  "checkpoint": "final",
+  "evaluation_batch_size": 128,
+  "dtype": "float32",
+  "parameters": 99977,
+  "consistency_weight": 0.05,
+  "pair_sampling": "uniform_train_anchor_then_uniform_distinct_surface_same_frame",
+  "shuffle": "whole_split_nonzero_circular_offset"
+}

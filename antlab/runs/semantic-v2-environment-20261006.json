@@ -1,0 +1,9 @@
+{
+  "python": "3.14.3",
+  "pytorch": "2.13.0+xpu",
+  "device": "cpu",
+  "threads": 2,
+  "dtype": "float32",
+  "system": "Windows",
+  "scope": "Sanitized AVL v2 environment; no user paths or host identifiers."
+}

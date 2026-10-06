@@ -33,11 +33,19 @@ negation is retained without inferring its opposite state.
 
 ```python
 from antlab.semantic_v2_demo import load_checkpoint, transmit_segments, receive_packet
+from antlab.semantic_render import render_meaning
 model = load_checkpoint("antlab/runs/semantic-v2-20261006", seed=44)
 sent = transmit_segments(model, ["It is certain that the lamp is on."])
 if sent["packet"] is not None:
     print({"status": "model_prediction", "predictions": receive_packet(model, sent["packet"])})
 ```
+
+For a human-readable reconstruction, call `render_meaning(frame)` on a
+received prediction. This fixed presentation layer uses only the nine fields,
+not the source. It preserves the predicted frame, not original wording, and
+raises `ValueError` for contradictory field combinations instead of dropping
+information. A valid rendered sentence can still reflect an incorrect model
+prediction; validate against the retained original when correctness matters.
 
 Transmit only packet bytes; sources, admission indices and audit targets stay
 local. Sender and receiver must use the same v2 checkpoint. The codec's AVL1

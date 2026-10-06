@@ -1,8 +1,10 @@
 # Meaning-preserving input representations
 
-Status: the [v1 controlled-segment encoder and transport interface](USAGE.md)
-are implemented. Automatic organization of arbitrary prose remains a research
-goal. See the [frozen protocol](AVL_V1_PROTOCOL.md) for actual scope.
+Status: the [v2 controlled-segment encoder and transport interface](USAGE_V2.md)
+pass their frozen finite-grammar gates across three seeds, including joint
+unseen wording and meaning combinations. Automatic organization of arbitrary
+prose remains a research goal. See the [results](AVL_V2_RESULTS.md) and
+[frozen protocol](AVL_V2_PROTOCOL.md) for actual scope.
 
 The purpose of the input layer is to help the model distinguish and use meaning. A cleaner summary or a JSON object alone does not establish understanding.
 

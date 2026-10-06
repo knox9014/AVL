@@ -1,0 +1,119 @@
+{
+  "status": "post_hoc_example_not_a_success_gate",
+  "seed": 44,
+  "sources": [
+    "When it rains, that the door is not closed is now possible.",
+    "Please, now ensure that the budget limit is at most 20 USD.",
+    "The budget is 17 USD."
+  ],
+  "supported_indices": [
+    0,
+    1
+  ],
+  "unsupported": [
+    {
+      "index": 2,
+      "status": "unsupported",
+      "text": "The budget is 17 USD."
+    }
+  ],
+  "receiver_input": "packet_bytes_only",
+  "prediction_status": "model_prediction",
+  "decoded_predictions": [
+    {
+      "kind": "fact",
+      "subject": "door",
+      "predicate": "closed",
+      "polarity": "negative",
+      "certainty": "possible",
+      "condition": "rain",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "request",
+      "subject": "budget",
+      "predicate": "limit",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "20",
+      "comparator": "at-most",
+      "unit": "USD"
+    }
+  ],
+  "reconstructed_english": [
+    "When it rains, it is possible that the door is not closed.",
+    "Please make sure that the budget limit is at most 20 USD."
+  ],
+  "expected_frames_for_separate_audit": [
+    {
+      "kind": "fact",
+      "subject": "door",
+      "predicate": "closed",
+      "polarity": "negative",
+      "certainty": "possible",
+      "condition": "rain",
+      "amount": "none",
+      "comparator": "none",
+      "unit": "none"
+    },
+    {
+      "kind": "request",
+      "subject": "budget",
+      "predicate": "limit",
+      "polarity": "positive",
+      "certainty": "certain",
+      "condition": "none",
+      "amount": "20",
+      "comparator": "at-most",
+      "unit": "USD"
+    }
+  ],
+  "all_example_frames_match": true,
+  "vectors": [
+    [
+      1.237965703010559,
+      1.5400229692459106,
+      -0.23593181371688843,
+      -0.23782779276371002,
+      0.08564912527799606,
+      -0.3260299265384674,
+      -0.7202586531639099,
+      -0.6605327725410461,
+      -2.0982513427734375,
+      0.41384682059288025,
+      -0.47843146324157715,
+      1.9597625732421875,
+      -1.5128698348999023,
+      0.10010011494159698,
+      1.693326473236084,
+      -1.066672682762146
+    ],
+    [
+      -1.2175219058990479,
+      -1.2420343160629272,
+      0.6593294143676758,
+      0.3134251832962036,
+      1.5238327980041504,
+      0.3908253312110901,
+      -0.9364926218986511,
+      0.4590793251991272,
+      1.2560776472091675,
+      -1.9723997116088867,
+      0.9322007894515991,
+      -1.76439368724823,
+      0.6967835426330566,
+      0.6410204172134399,
+      1.2697863578796387,
+      -1.1210602521896362
+    ]
+  ],
+  "wire_hex": "41564c310101100002000000a9759e3f791fc53f1c9871be218973becf68af3d65eda6bedf6238bfad1829bfc04906c0bbe3d33ef8f4f4be80d9fa3fb8a5c1bf4a01cd3decbed83fbb8888bfc2d79bbffbfa9ebfd0c9283f4479a03ef40cc33f421ac83efbbd6fbf720ceb3e27c7a03f9877fcbfb6a46e3fa7d7e1bf6860323fea19243f5c88a23fe77e8fbf",
+  "wire_bytes": 140,
+  "packet_sha256": "db41568b32f26a41d458de6e70b4f18cce08249172a4a8960671ae79f4eaba53",
+  "checkpoint_sha256": "a9d1f5348a67161e4ad33249d44e8c1633fe6f147a6d5c3ac754dd787e198ce2",
+  "render_source_sha256": "e7467efb9353eb72f2f594e4bb1446cd6d35aa02a71d9d9259a84616af6959c2",
+  "note": "Chosen example, not a heldout estimate. Targets are checked only after receipt, never supplied to the receiver. Rendering preserves the prediction, not the original wording. Requires matching sender/receiver checkpoint."
+}
