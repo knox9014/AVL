@@ -132,3 +132,28 @@ def query_named_amount(operator, meaning, candidate):
                               float(comparator == 'exact'), float(delta), float(abs(delta))]], dtype=torch.float32)
     prediction = operator(features).argmax(-1).item()
     return dict(status='model_prediction', answer=('undetermined', 'allowed', 'disallowed')[prediction])
+
+def main():
+    import argparse
+    import json
+    from pathlib import Path
+    from .semantic_v2_demo import load_checkpoint
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--checkpoint', type=Path, default=Path('antlab/runs/semantic-v2-20261006'))
+    parser.add_argument('--seed', type=int, default=44, choices=(44, 55, 66))
+    parser.add_argument('--text', action='append', required=True)
+    args = parser.parse_args()
+    torch.set_num_threads(2)
+    model = load_checkpoint(args.checkpoint, args.seed)
+    sent = send_named_segments(model, args.text)
+    meanings = receive_named_packets(model, sent['packets']) if sent['packets'] else []
+    records = [dict(index=index, status='model_prediction', meaning=meaning)
+               for index, meaning in zip(sent['supported_indices'], meanings)] + sent['unsupported']
+    records.sort(key=lambda row: row['index'])
+    print(json.dumps(dict(records=records, wire_bytes=sum(map(len, sent['packets'])),
+                          sources_retained_locally=True, literal_channel_explicit=True,
+                          scope='Known subject roles and finite grammar; named literals are copied, relations are learned.'),
+                     indent=2, ensure_ascii=False, allow_nan=False))
+
+if __name__ == '__main__':
+    main()
