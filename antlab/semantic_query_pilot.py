@@ -218,6 +218,7 @@ def run(study, output):
         train_vectors, train_wire = encode_rows(model, train_rows, deadline)
         test_vectors, test_wire = encode_rows(model, test_rows, deadline)
         head, training = train_head(train_vectors, train_targets, sender_seed + 1000, deadline)
+        training_evaluation = measure(train_targets, predict(head, train_vectors))
         with torch.no_grad():
             variants = dict(
                 transmitted=predict(head, test_vectors),
@@ -239,6 +240,7 @@ def run(study, output):
             raise ValueError('sender checkpoint changed')
         report['seeds'][str(sender_seed)] = dict(
             head_seed=sender_seed+1000, checkpoint_sha256=before, training=training,
+            posthoc_train_diagnostic=training_evaluation,
             train_wire_bytes=train_wire, test_wire_bytes=test_wire,
             wire_scope='cached input vectors in batches of 128; queries and network overhead excluded',
             evaluations=measured, gates=gates, invalid_decoded_frames=invalid,
@@ -258,8 +260,12 @@ def main():
     report = run(args.study, args.output)
     print(json.dumps(dict(pilot_passed=report['pilot_passed'],
                           total_seconds=report['total_seconds'],
-                          families={seed: {family: dict(accuracy=value['accuracy'], macro_recall=value['macro_recall'])
-                                           for family, value in entry['evaluations']['transmitted'].items()}
+                          families={seed: {mode: {family: dict(accuracy=value['accuracy'],
+                                            macro_recall=value['macro_recall'],
+                                            support=value['support'], recall=value['recall'])
+                                           for family, value in evaluation.items()}
+                                         for mode, evaluation in dict(entry['evaluations'],
+                                             posthoc_train=entry['posthoc_train_diagnostic']).items()}
                                     for seed, entry in report['seeds'].items()}), indent=2))
 
 
