@@ -4,6 +4,41 @@ Entries record implemented behavior, measured evidence, limitations and next
 questions. Use synthetic examples only. Never copy user conversations, account
 identifiers, personal paths, credentials or raw exception logs into this log.
 
+## 2026-10-07
+
+1. Reaffirmed AVL as a learned language for AI use. Human-readable frames,
+   English renderers and answer rules remain diagnostic scaffolding.
+2. Added a conservative semantic-query baseline for requests, uncertainty,
+   condition scope, unknown answers and numeric boundaries.
+3. Declared and executed a three-seed frozen-vector learned query pilot.
+   Metadata questions reached100%, but proposition macro recall was about33%.
+   Its success gate failed despite roughly98% headline accuracy.
+4. Diagnosed outcome imbalance: the query-only majority reached99.1337%
+   proposition accuracy. The learned head recovered supported claims in
+   training but missed heldout supported claims. Existing field-decoder rules
+   recovered all query answers; loss of all relevant vector information is
+   not supported by these observations.
+5. Declared a matched-capacity follow-up comparing raw vectors with frozen
+   decoder probability features. Both arms failed their per-family gates;
+   feature reuse did not demonstrate a general improvement.
+6. Preserved primary references, protocols, class-level summaries and failure
+   analysis in [the research record](research/2026-10-07-semantic-use.md) and
+   [results](research/2026-10-07-query-pilot-results.md). CI artifacts contain
+   full reports and head weights, with30-day retention. Durable summaries
+   retain per-class supports, recalls and controls in the repository.
+
+Validation: [105 repository tests passed](https://github.com/knox9014/AVL/actions/runs/37592435062)
+on Python3.12/PyTorch2.6.0CPU; the stdlib query/renderer/data suites also passed
+on Python3.10 and3.12. Original v2 protocol, source files, checkpoints and gates
+were preserved. Passing implementation tests does not make failed research
+gates pass. New findings are bounded and reuse previously observed v2 data.
+No network expansion or universal AI-language completion is claimed.
+
+Next: declare a richer heldout semantic-use study, with more distinct grounded
+claims, explicit equally available world context where needed, and controlled
+tests of query binding and factor composition. Do not tune repeatedly against
+the same observed joint set.
+
 ## 2026-10-06
 
 1. Frozen semantic v2: 99,977 parameters, controlled English, 16-dimensional
