@@ -44,8 +44,8 @@ The previous revision-1 head had0% recall on both supported classes.
 
 A separate coverage audit over all5,376 permitted grammar surfaces also reached
 100% accuracy and macro recall in every family for each seed. This includes
-sender-training examples and is not new generalization evidence. All three
-operators' abstract training curricula were classified100% correctly; that is a
+sender-training examples and is not new generalization evidence. For all three
+seeds, both operators' abstract training curricula were classified100% correctly; that is a
 training metric, not a test result.
 
 ## Controls
