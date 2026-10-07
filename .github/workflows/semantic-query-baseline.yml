@@ -1,0 +1,28 @@
+name: Semantic query baseline
+on:
+  pull_request:
+    paths:
+      - 'antlab/semantic_queries.py'
+      - 'antlab/semantic_render.py'
+      - 'antlab/semantic_v2_data.py'
+      - 'antlab/tests/test_semantic_queries.py'
+      - '.github/workflows/semantic-query-baseline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  query-fixtures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check query semantics and renderer compatibility
+        run: python -m unittest antlab.tests.test_semantic_queries antlab.tests.test_semantic_render antlab.tests.test_semantic_v2_data
