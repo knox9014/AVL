@@ -82,8 +82,10 @@ request, conditional, invalid-input and numeric-boundary cases. Local process st
 The query/renderer/data suites passed18tests on Python3.10 and3.12; the
 expanded selected receiver/transport suites passed25tests on Python3.12.
 Both neural pilot results, including failures and class-imbalance controls,
-are recorded separately. Full repository regression is pending in the latest
-CI run; no full-suite pass or exact original-environment replay is yet claimed.
+are recorded separately. The [full repository regression run](https://github.com/knox9014/AVL/actions/runs/37592435062)
+passed105tests on Python3.12/PyTorch2.6.0CPU at source head
+c5fc6ec67db0547c5afda949568ae06720664249. This is not an exact replay of
+the original Windows/PyTorch environment. Both research gates remain failed.
 
 Only synthetic semantics, code and public research references are included.
 No user conversations, personal paths, credentials or raw environment logs
