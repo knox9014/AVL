@@ -6,6 +6,17 @@ identifiers, personal paths, credentials or raw exception logs into this log.
 
 ## 2026-10-07
 
+Named literal extension: added optional AVN1 packets with explicit identifiers
+and uint64 values around one frozen learned relation vector. All3 seeds retained
+100% exact full meanings across2560 sources each;69 numeric boundary queries per
+seed also scored100%. Full suite now passes120 tests. Complete wire bytes270336
+versus223296 UTF-8 source bytes:21.07% larger. This is exact literal transport,
+not learned new entity concepts or number semantics. Same-checkpoint and finite
+known-role grammar limits remain. [Protocol](AVL_NAMED_VALUES_PROTOCOL.md),
+[usage](AVL_NAMED_VALUES_USAGE.md),
+[results and immutable evidence](research/2026-10-07-named-values-results.md).
+
+
 1. Reaffirmed AVL as a learned language for AI use. Human-readable frames,
    English renderers and answer rules remain diagnostic scaffolding.
 2. Added a conservative semantic-query baseline for requests, uncertainty,
