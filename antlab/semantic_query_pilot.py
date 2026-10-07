@@ -48,11 +48,12 @@ def labels_for(rows):
 
 
 class QueryReceiver(nn.Module):
-    def __init__(self):
+    def __init__(self, vector_width=16):
         super().__init__()
+        self.vector_width = vector_width
         # Numeric candidates share an identifier; their values enter separately.
         self.question = nn.Embedding(12, 8)
-        self.network = nn.Sequential(nn.Linear(25, 64), nn.GELU(),
+        self.network = nn.Sequential(nn.Linear(vector_width + 9, 64), nn.GELU(),
                                      nn.Linear(64, 64), nn.GELU(), nn.Linear(64, 13))
         allowed = torch.zeros(12, 13, dtype=torch.bool)
         for index, names in enumerate((('fact', 'request'), ('certain', 'possible'),
@@ -64,7 +65,7 @@ class QueryReceiver(nn.Module):
 
     def forward(self, vectors, question_ids, candidates):
         n = len(vectors)
-        if (vectors.shape != (n, 16) or n < 1 or vectors.dtype != torch.float32
+        if (vectors.shape != (n, self.vector_width) or n < 1 or vectors.dtype != torch.float32
                 or not torch.isfinite(vectors).all()):
             raise ValueError('expected nonempty finite float32 vectors')
         if (question_ids.shape != (n,) or question_ids.dtype != torch.long
@@ -130,9 +131,9 @@ def predict(head, vectors):
     return torch.cat(predictions).reshape(len(vectors), len(QUESTIONS))
 
 
-def train_head(vectors, targets, seed, deadline):
+def train_head(vectors, targets, seed, deadline, head_factory=QueryReceiver):
     torch.manual_seed(seed)
-    head = QueryReceiver()
+    head = head_factory()
     ids, candidates = query_features(len(vectors))
     repeated = vectors.repeat_interleave(len(QUESTIONS), dim=0)
     flattened = targets.flatten()
