@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'antlab/semantic_queries.py'
+      - 'antlab/semantic_query_pilot.py'
+      - 'antlab/tests/test_semantic_query_pilot.py'
+      - 'docs/AVL_QUERY_PILOT_PROTOCOL.md'
       - 'antlab/semantic_render.py'
       - 'antlab/semantic_v2_data.py'
       - 'antlab/tests/test_semantic_queries.py'
@@ -26,3 +29,27 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Check query semantics and renderer compatibility
         run: python -m unittest antlab.tests.test_semantic_queries antlab.tests.test_semantic_render antlab.tests.test_semantic_v2_data
+  frozen-vector-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Test receiver and existing transport compatibility
+        run: python -m unittest antlab.tests.test_semantic_query_pilot antlab.tests.test_semantic_queries antlab.tests.test_semantic_codec antlab.tests.test_semantic_v2_model
+      - name: Run declared three-seed query pilot
+        run: python -m antlab.semantic_query_pilot --output query-pilot-output
+      - name: Retain synthetic pilot report and receiver weights
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frozen-vector-query-pilot
+          path: query-pilot-output/
+          retention-days: 30
+          if-no-files-found: warn
