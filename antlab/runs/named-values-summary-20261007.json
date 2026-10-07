@@ -1,0 +1,229 @@
+{
+  "format": "avl-named-values-v1",
+  "completed": true,
+  "named_values_passed": true,
+  "learned_new_entity_concepts": false,
+  "literal_channel_explicit": true,
+  "sender_training": false,
+  "records": 2560,
+  "dataset_sha256": "d112663d9459ded252e0d8daeef35a8929e6144fb95e58f8a24bb66bccfc8453",
+  "source_hashes": {
+    "antlab/semantic_named_values.py": "466448ca03ed5ff0825236f69c63b8a200341121eb142ee1fda85fd3306bbd88",
+    "antlab/semantic_named_values_audit.py": "ac8dd9046ad77ef0b9231434b34ec0823b8c251eb438b4178428f42447c56210",
+    "docs/AVL_NAMED_VALUES_PROTOCOL.md": "798726373ed62f18268ffa97f1ad6acd0f691e236ec8b6bd1c701594ce067d87"
+  },
+  "operator_report_sha256": "b89a5960c0030d1c5713b1408fe5e368a4afa6e52048339de11601edccf9dc5c",
+  "seeds": {
+    "44": {
+      "full_meaning_accuracy": 1,
+      "literal_retention": 1,
+      "per_field_accuracy": {
+        "kind": 1,
+        "subject": 1,
+        "predicate": 1,
+        "polarity": 1,
+        "certainty": 1,
+        "condition": 1,
+        "amount": 1,
+        "comparator": 1,
+        "unit": 1,
+        "entity": 1
+      },
+      "gates": {
+        "literal_retention": true,
+        "full_meaning": true
+      },
+      "wire_bytes": {
+        "total": 270336,
+        "outer_headers": 30720,
+        "inner_headers": 30720,
+        "vector_payload": 163840,
+        "identifiers": 32768,
+        "integer_literals": 12288,
+        "source_utf8": 223296
+      },
+      "numeric": {
+        "records": 69,
+        "support": {
+          "undetermined": 0,
+          "allowed": 39,
+          "disallowed": 30
+        },
+        "recall": {
+          "allowed": 1,
+          "disallowed": 1
+        },
+        "macro_recall": 1,
+        "accuracy": 1,
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            39,
+            0
+          ],
+          [
+            0,
+            0,
+            30
+          ]
+        ],
+        "absent_classes": [
+          "undetermined"
+        ],
+        "scope": "budget queries only; exact integer difference precedes float32 features"
+      },
+      "checkpoint_sha256": "a9d1f5348a67161e4ad33249d44e8c1633fe6f147a6d5c3ac754dd787e198ce2",
+      "operator_sha256": "0b4aedadd8f5c706f75d5609fe20eb12a2a58d7a7f789611ce5a8d4176bb5a05"
+    },
+    "55": {
+      "full_meaning_accuracy": 1,
+      "literal_retention": 1,
+      "per_field_accuracy": {
+        "kind": 1,
+        "subject": 1,
+        "predicate": 1,
+        "polarity": 1,
+        "certainty": 1,
+        "condition": 1,
+        "amount": 1,
+        "comparator": 1,
+        "unit": 1,
+        "entity": 1
+      },
+      "gates": {
+        "literal_retention": true,
+        "full_meaning": true
+      },
+      "wire_bytes": {
+        "total": 270336,
+        "outer_headers": 30720,
+        "inner_headers": 30720,
+        "vector_payload": 163840,
+        "identifiers": 32768,
+        "integer_literals": 12288,
+        "source_utf8": 223296
+      },
+      "numeric": {
+        "records": 69,
+        "support": {
+          "undetermined": 0,
+          "allowed": 39,
+          "disallowed": 30
+        },
+        "recall": {
+          "allowed": 1,
+          "disallowed": 1
+        },
+        "macro_recall": 1,
+        "accuracy": 1,
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            39,
+            0
+          ],
+          [
+            0,
+            0,
+            30
+          ]
+        ],
+        "absent_classes": [
+          "undetermined"
+        ],
+        "scope": "budget queries only; exact integer difference precedes float32 features"
+      },
+      "checkpoint_sha256": "42404b544553b744e08a2e33e526d33d100d25e21f4ce86fc5e00fc784e997cc",
+      "operator_sha256": "c8d0a3b15b76578eba8e0c75b344ca10d14c24ade52475b6bd662db3d50e0db3"
+    },
+    "66": {
+      "full_meaning_accuracy": 1,
+      "literal_retention": 1,
+      "per_field_accuracy": {
+        "kind": 1,
+        "subject": 1,
+        "predicate": 1,
+        "polarity": 1,
+        "certainty": 1,
+        "condition": 1,
+        "amount": 1,
+        "comparator": 1,
+        "unit": 1,
+        "entity": 1
+      },
+      "gates": {
+        "literal_retention": true,
+        "full_meaning": true
+      },
+      "wire_bytes": {
+        "total": 270336,
+        "outer_headers": 30720,
+        "inner_headers": 30720,
+        "vector_payload": 163840,
+        "identifiers": 32768,
+        "integer_literals": 12288,
+        "source_utf8": 223296
+      },
+      "numeric": {
+        "records": 69,
+        "support": {
+          "undetermined": 0,
+          "allowed": 39,
+          "disallowed": 30
+        },
+        "recall": {
+          "allowed": 1,
+          "disallowed": 1
+        },
+        "macro_recall": 1,
+        "accuracy": 1,
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            39,
+            0
+          ],
+          [
+            0,
+            0,
+            30
+          ]
+        ],
+        "absent_classes": [
+          "undetermined"
+        ],
+        "scope": "budget queries only; exact integer difference precedes float32 features"
+      },
+      "checkpoint_sha256": "38efb3159009291473b8871fed8e87b6c4549233e173119c438c8b32f8ad61cf",
+      "operator_sha256": "7220d2b8cd1227b3e998eb74ecd215873043ea580b67fb4aed62685d35952d4b"
+    }
+  },
+  "total_seconds": 0.46749834899998177,
+  "provenance": {
+    "workflow_run_id": 37626489013,
+    "job_id": 112809463559,
+    "tested_head": "277639c2aa52a8564812d9709f5f4987207d5290",
+    "artifact_id": 11484546491,
+    "artifact_sha256": "adb20130b2fb5acf592e8f56da7aa84dae546e203063423f60e78b9a9ef36fcf",
+    "artifact_retention_days": 30,
+    "repository_tests": 120,
+    "python": "3.12",
+    "torch": "2.6.0+cpu",
+    "summary_origin": "Parsed from successful GitHub Actions job JSON output; full report and dataset retained in artifact"
+  }
+}
