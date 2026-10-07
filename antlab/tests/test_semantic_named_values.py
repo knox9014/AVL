@@ -4,7 +4,8 @@ import torch
 from antlab.semantic_codec import pack_vectors
 from antlab.semantic_named_values import (
     MAX_UINT64, HEADER, canonicalize_named, pack_named, unpack_named,
-    query_named_amount, send_named_segments)
+    query_named_amount, send_named_segments, receive_named_packets)
+from antlab.semantic_v2_data import VOCABS
 from antlab.semantic_named_values_audit import audit_rows
 
 class NamedValuesTests(unittest.TestCase):
@@ -78,6 +79,32 @@ class NamedValuesTests(unittest.TestCase):
                              'unsupported_numeric_distance')
         with self.assertRaises(ValueError):
             query_named_amount(Capture(), meaning, True)
+
+    def test_receiver_uses_vector_and_checks_literal_role(self):
+        class Receiver:
+            def __init__(self, budget):
+                self.budget = budget
+            def decode(self, vectors):
+                self.seen = vectors.clone()
+                values = ('fact', 'budget', 'limit', 'positive', 'certain', 'none',
+                          '20', 'exact', 'USD') if self.budget else (
+                          'fact', 'lamp', 'on', 'negative', 'possible', 'night',
+                          'none', 'none', 'none')
+                logits = torch.full((len(vectors), 9, 8), -100.)
+                for column, (vocab, value) in enumerate(zip(VOCABS, values)):
+                    logits[:, column, vocab.index(value)] = 100.
+                return logits
+        vector = torch.arange(16, dtype=torch.float32).unsqueeze(0)
+        packet = pack_named(pack_vectors(vector), 'B7', MAX_UINT64)
+        receiver = Receiver(True)
+        meaning = receive_named_packets(receiver, [packet])[0]
+        self.assertTrue(torch.equal(receiver.seen, vector))
+        self.assertEqual(meaning['amount'], str(MAX_UINT64))
+        self.assertEqual(meaning['entity'], 'B7')
+        with self.assertRaises(ValueError):
+            receive_named_packets(Receiver(False), [packet])
+        with self.assertRaises(ValueError):
+            receive_named_packets(Receiver(True), [pack_named(self.inner(), 'x')])
 
     def test_preregistered_dataset_and_adapter(self):
         rows = audit_rows()
