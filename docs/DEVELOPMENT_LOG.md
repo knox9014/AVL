@@ -27,11 +27,21 @@ identifiers, personal paths, credentials or raw exception logs into this log.
    full reports and head weights, with30-day retention. Durable summaries
    retain per-class supports, recalls and controls in the repository.
 
-Validation: [105 repository tests passed](https://github.com/knox9014/AVL/actions/runs/37592435062)
+7. Revision3 introduced factorized learned operators with an abstract semantic
+   curriculum. All three frozen sender/receiver checkpoints passed every
+   unchanged query-family gate:100% accuracy and macro recall on the observed
+   joint set, plus100% in the separate all-grammar coverage audit.
+   [Results and limitations](research/2026-10-07-query-operators-results.md).
+   This reuses the supervised field receiver and fully teaches the abstract
+   operator patterns; it is not new codebook learning or universal language.
+   Added2,758operator parameters; total inference102,735parameters.
+
+Validation: [112 repository tests passed](https://github.com/knox9014/AVL/actions/runs/37600152482)
 on Python3.12/PyTorch2.6.0CPU; the stdlib query/renderer/data suites also passed
 on Python3.10 and3.12. Original v2 protocol, source files, checkpoints and gates
 were preserved. Passing implementation tests does not make failed research
-gates pass. New findings are bounded and reuse previously observed v2 data.
+gates pass. Revisions1/2 remain failed; revision3 separately passed. New findings
+are bounded and reuse previously observed v2 data.
 No network expansion or universal AI-language completion is claimed.
 
 Next: declare a richer heldout semantic-use study, with more distinct grounded
