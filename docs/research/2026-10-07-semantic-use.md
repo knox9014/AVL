@@ -1,6 +1,6 @@
 # AVL semantic-use research record
 
-2026-10-07. Status: research draft with two executed bounded query studies. Both failed their declared gates; see [results](2026-10-07-query-pilot-results.md).
+2026-10-07. Status: three executed bounded query studies. The first two failed; [revision3](2026-10-07-query-operators-results.md) passed its unchanged bounded gates using a supervised factor receiver and abstract operator curriculum. Earlier [failures](2026-10-07-query-pilot-results.md) remain preserved.
 
 ## Purpose
 
@@ -82,10 +82,10 @@ request, conditional, invalid-input and numeric-boundary cases. Local process st
 The query/renderer/data suites passed18tests on Python3.10 and3.12; the
 expanded selected receiver/transport suites passed25tests on Python3.12.
 Both neural pilot results, including failures and class-imbalance controls,
-are recorded separately. The [full repository regression run](https://github.com/knox9014/AVL/actions/runs/37592435062)
-passed105tests on Python3.12/PyTorch2.6.0CPU at source head
-c5fc6ec67db0547c5afda949568ae06720664249. This is not an exact replay of
-the original Windows/PyTorch environment. Both research gates remain failed.
+are recorded separately. The [full repository regression run](https://github.com/knox9014/AVL/actions/runs/37600152482)
+passed112tests on Python3.12/PyTorch2.6.0CPU at source head
+7b6b217a2569c88a99ea4163135ad89db7271f79. This is not an exact replay of
+the original Windows/PyTorch environment. The first two studies remain failed; revision3 separately passed its bounded gates.
 
 Only synthetic semantics, code and public research references are included.
 No user conversations, personal paths, credentials or raw environment logs
