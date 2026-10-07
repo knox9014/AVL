@@ -2,6 +2,10 @@ name: Semantic query baseline
 on:
   pull_request:
     paths:
+      - 'antlab/semantic_named_values.py'
+      - 'antlab/semantic_named_values_audit.py'
+      - 'antlab/tests/test_semantic_named_values.py'
+      - 'docs/AVL_NAMED_VALUES_PROTOCOL.md'
       - 'antlab/semantic_queries.py'
       - 'antlab/semantic_query_pilot.py'
       - 'antlab/semantic_query_operators.py'
@@ -55,6 +59,8 @@ jobs:
         run: python -m antlab.semantic_query_features --output query-features-output
       - name: Run factorized learned-operator experiment
         run: python -m antlab.semantic_query_operators --output query-operators-output
+      - name: Audit named entities and exact integers
+        run: python -m antlab.semantic_named_values_audit --operators query-operators-output --output named-values-output
       - name: Retain synthetic pilot report and receiver weights
         if: always()
         uses: actions/upload-artifact@v4
@@ -64,5 +70,6 @@ jobs:
             query-pilot-output/
             query-features-output/
             query-operators-output/
+            named-values-output/
           retention-days: 30
           if-no-files-found: warn
