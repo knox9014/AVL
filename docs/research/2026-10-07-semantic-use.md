@@ -1,6 +1,6 @@
 # AVL semantic-use research record
 
-2026-10-07. Status: implementation draft; no new neural training or accuracy claim.
+2026-10-07. Status: research draft with two executed bounded query studies. Both failed their declared gates; see [results](2026-10-07-query-pilot-results.md).
 
 ## Purpose
 
@@ -55,7 +55,7 @@ is an annotation oracle. Neither is a learned semantic-query receiver, and
 neither provides evidence of general intelligence or general AI interoperability.
 No frozen v2 sources, weights, primary gates or default inference were changed.
 
-## Next neural study: proposal, not frozen protocol
+## Neural study direction
 
 Compare a learned query receiver using only deserialized AVL vectors and query
 identifiers against the existing field-decoder/rule route. Keep the sender
@@ -78,11 +78,12 @@ Passing a learned adapter is not zero-shot mutual understanding.
 ## Validation record
 
 The new fixture suite covers 448 permitted frames plus explicit uncertainty,
-request, conditional, invalid-input and numeric-boundary cases. At publication
-of this draft the tests have not run: local process startup is unavailable.
-A separate minimal CI workflow is proposed to execute the stdlib-only query,
-renderer and data tests on Python 3.10 and 3.12. No inference performance,
-checkpoint reproduction or full-suite pass is claimed until actually executed.
+request, conditional, invalid-input and numeric-boundary cases. Local process startup is unavailable, so GitHub CI executes the tests.
+The query/renderer/data suites passed18tests on Python3.10 and3.12; the
+expanded selected receiver/transport suites passed25tests on Python3.12.
+Both neural pilot results, including failures and class-imbalance controls,
+are recorded separately. Full repository regression is pending in the latest
+CI run; no full-suite pass or exact original-environment replay is yet claimed.
 
 Only synthetic semantics, code and public research references are included.
 No user conversations, personal paths, credentials or raw environment logs
