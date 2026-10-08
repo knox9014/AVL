@@ -198,3 +198,42 @@ matrix-operator false email match remains manually reviewed; whole scans still
 return blocked=true, not a clean pass. Synthetic fixtures only; ACT/private
 content excluded. Main/default inference unchanged; existing draft PR updated.
 These joint results are now observed and must be disclosed if reused.
+
+
+## 2026-10-08: shared operator and fresh four-node transfer — gates passed
+
+Added experimental AVC2/ACQ2 bounded3/4node chain interface and66parameter
+shared learned channel operator over the frozen676parameter relation decoder.
+Explicit routing and known inverse-channel permutation are designed, not
+learned. Reuse of supervised class semantics differs from the historical raw
+MLP and is not an equal-information/capacity ablation.
+
+All three operators pass every preregistered gate: old observed joint/phrasing/
+new_joint and fresh known4/new4 accuracy and macro recall100%. Each four-node
+cohort has12288queries over64primitive relation triples; all128 positive
+distance-three queries also score100%. These three-edge routes never enter
+training. Binary operator cases remain supervised/observed. Rule baselines
+also score100%; no superiority over rules or novel concept discovery claimed.
+
+149 full tests and6 focused tests pass atc261178b3f8a400adcfcf87fa541c84249ee78c7,
+run37787142732. Earlier workflows pass the same head; old raw-MLP research
+failure is preserved. Frozen primitive tensor fingerprints match the prior
+flat-query experiment for all3seeds despite different checkpoint FILE hashes;
+this match is a post-hoc provenance audit. Paired invariance/replacement tests
+use declared16/48/64scene subsamples, with hashes/counts retained.
+
+Fresh queries254bytes are2.0039x text-plus-table/query framing and4.7925x
+symbolic gold. Graph repeats per query. No compression, network deployment or
+independent model negotiation. Learned operator states are safe-loaded and
+roundtrip-verified;105.505s CPU2thread audit excluding primitive reproduction.
+A post-hoc gold-label shift diagnostic exactly reproduces63.54% shuffle
+accuracy, confirming residual answer information in that control.
+
+Complete report: antlab/runs/shared-operator-report-20261008.json.
+Results/limitations: docs/research/2026-10-08-shared-operator-results.md.
+Language semantics/wire/API example: docs/AVL_CHAIN_QUERY_GUIDE.md.
+Local staged/tracked scans inspect40 explicit AVL research files each, with no
+new shared-operator/guide findings or binary skips. The earlier alignment
+Python @ operator remains the sole manually reviewed false email finding;
+whole scans still report blocked=true, not a clean pass. Only synthetic data,
+no ACT or private conversation content. Main/default inference preserved.
