@@ -1,0 +1,36 @@
+name: AVL grounded vector language
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/semantic_grounded*.py'
+      - 'antlab/tests/test_semantic_grounded*.py'
+      - '.github/workflows/grounded-vector.yml'
+permissions:
+  contents: read
+jobs:
+  grounded-vector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Grounded contract tests
+        run: python -m unittest antlab.tests.test_semantic_grounded_codec antlab.tests.test_semantic_grounded_pilot -v
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Train and compare vector languages
+        run: python -m antlab.semantic_grounded_pilot --output grounded-vector-output
+      - name: Preserve synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avl-grounded-vector-language
+          path: grounded-vector-output/
+          retention-days: 30
