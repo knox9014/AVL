@@ -1,0 +1,4805 @@
+{
+  "format": "avl-binding-pilot-v1",
+  "completed": true,
+  "pilot_passed": true,
+  "supervised_end_to_end": true,
+  "arbitrary_name_comprehension_learned": false,
+  "scope": "finite spatial relation binding with designed name-to-slot adapter",
+  "torch": "2.6.0+cpu",
+  "dataset_sha256": "c4a709281bacc6f5ead77522f7408ed715d77d40bbf5fae00377dba87ce07a59",
+  "source_hashes": {
+    "antlab/semantic_binding_data.py": "4bd5b7f2e9bd9f6a500bf3bc72a578740dce6de2df06241ffd10aad01bd4a719",
+    "antlab/semantic_binding_pilot.py": "26c1719dd0dc877b6cc3c99cf1404f4822986528012ac22dca0b05796f0eeec8",
+    "antlab/semantic_codec.py": "e357f8b9d3b92971fe54c1c3eda6cb2391b1a05954d119b13745fda96faac412",
+    "docs/AVL_BINDING_PILOT_PROTOCOL.md": "a48300933af5bd4732ea4b3444c382261df8d7286cdf88601c1a20548dfc623a",
+    "antlab/tests/test_semantic_binding_data.py": "72174fc52dfd747fcc8d3523b99e56404316de19e74c24d0c21697e39a0c1c05",
+    "antlab/tests/test_semantic_binding_pilot.py": "30a372c6d3306dea90f2eb1d99f45f61dfa28bd3fdef3c6d87ba816e2a36e48e"
+  },
+  "vocabulary": [
+    "above",
+    "below",
+    "is",
+    "left",
+    "now",
+    "of",
+    "right",
+    "slot0",
+    "slot1"
+  ],
+  "canonical_training_forms": 16,
+  "partitions": {
+    "train": {
+      "records": 2880,
+      "support": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "canonical_training_overlap": 2880,
+      "vector_packet_bytes": 218880,
+      "table_bytes": 40320,
+      "transmitted_bytes": 259200,
+      "text_reference_bytes": 110160,
+      "structured_oracle_bytes": 43200,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    },
+    "validation": {
+      "records": 1440,
+      "support": [
+        360,
+        360,
+        360,
+        360
+      ],
+      "canonical_training_overlap": 0,
+      "vector_packet_bytes": 109440,
+      "table_bytes": 20160,
+      "transmitted_bytes": 129600,
+      "text_reference_bytes": 57960,
+      "structured_oracle_bytes": 21600,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    },
+    "pair": {
+      "records": 960,
+      "support": [
+        240,
+        240,
+        240,
+        240
+      ],
+      "canonical_training_overlap": 960,
+      "vector_packet_bytes": 72960,
+      "table_bytes": 13440,
+      "transmitted_bytes": 86400,
+      "text_reference_bytes": 36720,
+      "structured_oracle_bytes": 14400,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    },
+    "joint": {
+      "records": 480,
+      "support": [
+        120,
+        120,
+        120,
+        120
+      ],
+      "canonical_training_overlap": 0,
+      "vector_packet_bytes": 36480,
+      "table_bytes": 6720,
+      "transmitted_bytes": 43200,
+      "text_reference_bytes": 19320,
+      "structured_oracle_bytes": 7200,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    },
+    "new_names": {
+      "records": 448,
+      "support": [
+        112,
+        112,
+        112,
+        112
+      ],
+      "canonical_training_overlap": 0,
+      "vector_packet_bytes": 34048,
+      "table_bytes": 6272,
+      "transmitted_bytes": 40320,
+      "text_reference_bytes": 18032,
+      "structured_oracle_bytes": 6720,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    },
+    "phrasing": {
+      "records": 1440,
+      "support": [
+        360,
+        360,
+        360,
+        360
+      ],
+      "canonical_training_overlap": 0,
+      "vector_packet_bytes": 109440,
+      "table_bytes": 20160,
+      "transmitted_bytes": 129600,
+      "text_reference_bytes": 57960,
+      "structured_oracle_bytes": 21600,
+      "cost_scope": "per-message headers and literals included; network/model distribution excluded"
+    }
+  },
+  "seeds": {
+    "44": {
+      "training": {
+        "steps": 2000,
+        "batch": 128,
+        "seconds": 7.279727665999999,
+        "final_loss": 0.00002309745286765974,
+        "baseline_loss": 1.3885527849197388,
+        "parameters": 11124,
+        "receiver_parameters": 676,
+        "baseline_parameters": 676
+      },
+      "checkpoint_sha256": "7038eb90e98c1515a427852c7016c9cf515978010f7ff0dc52684c8fd5462eca",
+      "evaluations": {
+        "train": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                630,
+                90,
+                0
+              ],
+              [
+                630,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                630
+              ],
+              [
+                0,
+                0,
+                630,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                720,
+                720,
+                720,
+                720
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  720,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  720,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  720,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  720
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "validation": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "pair": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                210,
+                30,
+                0
+              ],
+              [
+                210,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                210
+              ],
+              [
+                0,
+                0,
+                210,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                240,
+                240,
+                240,
+                240
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  240,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  240,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  240,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  240
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "joint": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                90,
+                30,
+                0
+              ],
+              [
+                90,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                90
+              ],
+              [
+                0,
+                0,
+                90,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                120,
+                120,
+                120,
+                120
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  120,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  120,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  120,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  120
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "new_names": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                84,
+                28,
+                0
+              ],
+              [
+                84,
+                28,
+                0,
+                0
+              ],
+              [
+                28,
+                0,
+                0,
+                84
+              ],
+              [
+                0,
+                0,
+                84,
+                28
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                112,
+                112,
+                112,
+                112
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  112,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  112,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  112,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  112
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "phrasing": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        }
+      },
+      "gates": {
+        "pair": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "joint": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "new_names": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "phrasing": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        }
+      }
+    },
+    "55": {
+      "training": {
+        "steps": 2000,
+        "batch": 128,
+        "seconds": 7.284505326999991,
+        "final_loss": 0.000026466846975381486,
+        "baseline_loss": 1.3867541551589966,
+        "parameters": 11124,
+        "receiver_parameters": 676,
+        "baseline_parameters": 676
+      },
+      "checkpoint_sha256": "6e05ea9034d9dda85deed79be152386197dee874cf2216c337e9e97762d8e4c6",
+      "evaluations": {
+        "train": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                630,
+                90,
+                0
+              ],
+              [
+                630,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                630
+              ],
+              [
+                0,
+                0,
+                630,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                720,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                720,
+                720,
+                720,
+                720
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  720,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  720,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  720,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  720
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "validation": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "pair": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                210,
+                30,
+                0
+              ],
+              [
+                210,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                210
+              ],
+              [
+                0,
+                0,
+                210,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                240,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                240,
+                240,
+                240,
+                240
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  240,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  240,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  240,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  240
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "joint": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                90,
+                30,
+                0
+              ],
+              [
+                90,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                90
+              ],
+              [
+                0,
+                0,
+                90,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                120,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                120,
+                120,
+                120,
+                120
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  120,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  120,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  120,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  120
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "new_names": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                84,
+                28,
+                0
+              ],
+              [
+                84,
+                28,
+                0,
+                0
+              ],
+              [
+                28,
+                0,
+                0,
+                84
+              ],
+              [
+                0,
+                0,
+                84,
+                28
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                112,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                112,
+                112,
+                112,
+                112
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  112,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  112,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  112,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  112
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "phrasing": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                360,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        }
+      },
+      "gates": {
+        "pair": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "joint": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "new_names": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "phrasing": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        }
+      }
+    },
+    "66": {
+      "training": {
+        "steps": 2000,
+        "batch": 128,
+        "seconds": 7.236710776999999,
+        "final_loss": 0.000019354540199856274,
+        "baseline_loss": 1.385520100593567,
+        "parameters": 11124,
+        "receiver_parameters": 676,
+        "baseline_parameters": 676
+      },
+      "checkpoint_sha256": "44906276a5c3b5d43e0aaaef984f59d3518cd02abe01b3ce3b0b16473844a4f2",
+      "evaluations": {
+        "train": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                720,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                720,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ],
+              [
+                0,
+                0,
+                720,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                630,
+                90,
+                0
+              ],
+              [
+                630,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                630
+              ],
+              [
+                0,
+                0,
+                630,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ],
+              [
+                0,
+                0,
+                0,
+                720
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                720,
+                720,
+                720,
+                720
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  720,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  720,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  720,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  720
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "validation": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "pair": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                240,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                240,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ],
+              [
+                0,
+                0,
+                240,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.0625,
+            "macro_recall": 0.0625,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0.125,
+              0,
+              0.125
+            ],
+            "confusion": [
+              [
+                0,
+                210,
+                30,
+                0
+              ],
+              [
+                210,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                210
+              ],
+              [
+                0,
+                0,
+                210,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              240,
+              240,
+              240,
+              240
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ],
+              [
+                0,
+                0,
+                0,
+                240
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                240,
+                240,
+                240,
+                240
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  240,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  240,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  240,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  240
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "joint": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                120,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                120,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ],
+              [
+                0,
+                0,
+                120,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                90,
+                30,
+                0
+              ],
+              [
+                90,
+                30,
+                0,
+                0
+              ],
+              [
+                30,
+                0,
+                0,
+                90
+              ],
+              [
+                0,
+                0,
+                90,
+                30
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              120,
+              120,
+              120,
+              120
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ],
+              [
+                0,
+                0,
+                0,
+                120
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                120,
+                120,
+                120,
+                120
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  120,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  120,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  120,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  120
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "new_names": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                112,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                112,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ],
+              [
+                0,
+                0,
+                112,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                84,
+                28,
+                0
+              ],
+              [
+                84,
+                28,
+                0,
+                0
+              ],
+              [
+                28,
+                0,
+                0,
+                84
+              ],
+              [
+                0,
+                0,
+                84,
+                28
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              112,
+              112,
+              112,
+              112
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ],
+              [
+                0,
+                0,
+                0,
+                112
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                112,
+                112,
+                112,
+                112
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  112,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  112,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  112,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  112
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        },
+        "phrasing": {
+          "transmitted": {
+            "accuracy": 1,
+            "macro_recall": 1,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "confusion": [
+              [
+                360,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                360,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "zero": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ],
+              [
+                0,
+                0,
+                360,
+                0
+              ]
+            ]
+          },
+          "shuffled": {
+            "accuracy": 0.125,
+            "macro_recall": 0.125,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0.25,
+              0,
+              0.25
+            ],
+            "confusion": [
+              [
+                0,
+                270,
+                90,
+                0
+              ],
+              [
+                270,
+                90,
+                0,
+                0
+              ],
+              [
+                90,
+                0,
+                0,
+                270
+              ],
+              [
+                0,
+                0,
+                270,
+                90
+              ]
+            ]
+          },
+          "no_message": {
+            "accuracy": 0.25,
+            "macro_recall": 0.25,
+            "support": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "recall": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ],
+              [
+                0,
+                0,
+                0,
+                360
+              ]
+            ]
+          },
+          "valid_replacement": {
+            "original_agreement": 0,
+            "replacement": {
+              "accuracy": 1,
+              "macro_recall": 1,
+              "support": [
+                360,
+                360,
+                360,
+                360
+              ],
+              "recall": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "confusion": [
+                [
+                  360,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  360,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  360,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  360
+                ]
+              ]
+            }
+          },
+          "paired": {
+            "equivalent": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "opposite": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            },
+            "table": {
+              "both_correct": 1,
+              "changed_scene_accuracy": 1
+            }
+          }
+        }
+      },
+      "gates": {
+        "pair": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "joint": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "new_names": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        },
+        "phrasing": {
+          "accuracy": true,
+          "macro_recall": true,
+          "paired": true,
+          "replacement": true,
+          "no_message": true,
+          "gap": true
+        }
+      }
+    }
+  },
+  "crossplay": {
+    "44": {
+      "44": {
+        "accuracy": 1,
+        "macro_recall": 1,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "confusion": [
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ]
+        ]
+      },
+      "55": {
+        "accuracy": 0.25,
+        "macro_recall": 0.25,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ]
+        ]
+      },
+      "66": {
+        "accuracy": 0.25,
+        "macro_recall": 0.25,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ],
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ]
+        ]
+      }
+    },
+    "55": {
+      "44": {
+        "accuracy": 0,
+        "macro_recall": 0,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ],
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            120,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "55": {
+        "accuracy": 1,
+        "macro_recall": 1,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "confusion": [
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ]
+        ]
+      },
+      "66": {
+        "accuracy": 0.25,
+        "macro_recall": 0.25,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ]
+        ]
+      }
+    },
+    "66": {
+      "44": {
+        "accuracy": 0.375,
+        "macro_recall": 0.375,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          0.5,
+          0,
+          1
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            120
+          ],
+          [
+            0,
+            60,
+            60,
+            0
+          ],
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ]
+        ]
+      },
+      "55": {
+        "accuracy": 0,
+        "macro_recall": 0,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "confusion": [
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            60,
+            0,
+            0,
+            60
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ]
+        ]
+      },
+      "66": {
+        "accuracy": 1,
+        "macro_recall": 1,
+        "support": [
+          120,
+          120,
+          120,
+          120
+        ],
+        "recall": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "confusion": [
+          [
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            120,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            120,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            120
+          ]
+        ]
+      }
+    }
+  },
+  "total_seconds": 27.485149717,
+  "provenance": {
+    "date": "2026-10-08",
+    "run_id": 37720958084,
+    "job_id": 113128221734,
+    "tested_head": "17bbc80fa215cdc6cd7604cb431d8e11be4efbbe",
+    "artifact_id": 11526091591,
+    "artifact_sha256": "a38eff9ea05ed8ebb01fde06f7dfbc9245a8f394a50085f729b2a8082ae29e95",
+    "retention_days": 30,
+    "repository_tests": 128,
+    "focused_tests": 8,
+    "source": "Successful CI JSON output; no raw logs copied",
+    "local_independent_surface_label_checks": 7648
+  },
+  "interpretation": {
+    "crossplay_off_diagonal_mean_accuracy": 0.1875,
+    "independent_codebook_alignment_demonstrated": false,
+    "canonical_semantic_novelty_demonstrated": false,
+    "notes": "Only16 unique canonical training strings; heldout pair repeats familiar strings, and template3 partitions share eight unique canonical strings. Name adaptation is designed, not learned. Cost/fidelity oracles are not learned competitors."
+  }
+}
