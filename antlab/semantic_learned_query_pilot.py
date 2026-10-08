@@ -146,9 +146,15 @@ def score_queries(queries,predictions):
         path=[i for i,q in enumerate(queries) if q['kind']=='path'],
         positive_path=[i for i,q in enumerate(queries) if q['kind']=='path' and q['target']!=4],
         undetermined=[i for i,q in enumerate(queries) if q['target']==4])
-    return {name:classification([queries[i]['target'] for i in indices],
-                                [predictions[i] for i in indices],5)
-            for name,indices in groups.items()}
+    result={}
+    for name,indices in groups.items():
+        if indices:
+            result[name]={**classification([queries[i]['target'] for i in indices],
+                                           [predictions[i] for i in indices],5),'records':len(indices)}
+        else:
+            result[name]=dict(records=0,accuracy=None,macro_recall_observed=None,
+                observed_classes=[],support=[0]*5,recall=[None]*5,confusion=[[0]*5 for _ in range(5)])
+    return result
 
 def reversal_pairs(queries,predictions):
     eligible=[i for i,q in enumerate(queries) if q['target']!=4]
