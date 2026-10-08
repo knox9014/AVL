@@ -17,26 +17,26 @@ Record canonical overlap and explicit literal channel.
 No default inference changes or main merge.
 
 ## Task1: Dataset and leakage tests
-- [ ] Add antlab/tests/test_semantic_binding.py covering inverse equivalence,
+- [x] Add antlab/tests/test_semantic_binding_data.py and antlab/tests/test_semantic_binding_pilot.py covering inverse equivalence,
 group split isolation, balance, canonical overlap and malformed tables.
-- [ ] Observe failure before implementation.
-- [ ] Implement antlab/semantic_binding_data.py: make_data()->dict of row lists;
+- [x] Observe failure before implementation.
+- [x] Implement antlab/semantic_binding_data.py: make_data()->dict of row lists;
 canonicalize(text,table)->list[str]; inverse/transform helpers.
-- [ ] Verify tests and counts; target leakage absent in receiver metadata.
+- [x] Verify tests and counts; target leakage absent in receiver metadata.
 
 ## Task2: Training and wire receiver
-- [ ] Test actual codec roundtrip, finite inputs, correct intervention targets,
+- [x] Test actual codec roundtrip, finite inputs, correct intervention targets,
 all-class metric support and wire totals.
-- [ ] Implement antlab/semantic_binding_pilot.py with the fixed architecture,
+- [x] Implement antlab/semantic_binding_pilot.py with the fixed architecture,
 training and constant-input baseline. Receive only deserialized vectors.
-- [ ] Execute all seeds once; save checkpoints, source/data hashes, metrics and
+- [x] Execute all seeds once; save checkpoints, source/data hashes, metrics and
 cross-play matrix. No success-dependent training changes.
 
 ## Task3: CI and evidence
-- [ ] Add isolated binding workflow; first demonstrate test failure for missing
+- [x] Add isolated binding workflow; first demonstrate test failure for missing
 implementation, then run complete regression and full pilot.
-- [ ] Review code and reports; save durable summary and result analysis.
-- [ ] Publish only explicitly listed AVL paths to existing draft PR.
+- [x] Review code and reports; save durable summary and result analysis.
+- [x] Publish only explicitly listed AVL paths to existing draft PR.
 
 ## Review Focus
 Inverse paraphrase leaks: semantic split audit.
@@ -46,3 +46,10 @@ Zero-vector distribution shift: valid counterfactual replacement and trained
 no-message control.
 False intervention success: require both paired predictions correct.
 Missing classes: metrics reject absent support.
+
+## Execution record
+Completed at tested head17bbc80fa215cdc6cd7604cb431d8e11be4efbbe, run37720958084.
+128 repository tests passed; full declared pilot executed once after test fixes.
+No model training ran in earlier missing-module/gradient-test failures.
+Native author review performed; no independent reviewer used. Evidence and
+limitations are in docs/research/2026-10-08-binding-pilot-results.md.
