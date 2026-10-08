@@ -165,3 +165,36 @@ semantic_alignment_pilot.py:39 remains the sole email-pattern false positive,
 manually reviewed; whole scans still return blocked=true, not a clean pass.
 All source fixtures are synthetic; no ACT content or private conversations.
 Default AVL1 inference and main are preserved.
+
+
+## 2026-10-08: learned composition query generalization — failed gates
+
+Preregistered7,749-parameter raw-vector MLP with explicit endpoints/query slots,
+three frozen primitive senders and paired separately trained no-vector controls.
+Symmetry-closed heldout tuples(0,0),(1,1),(0,2),(3,1) yield12 joint semantic
+signatures disjoint from36 train signatures. Heldout positive two-hop answers
+include left/right; every base query partition has all five answer classes.
+
+All three receivers fit train100%, but joint accuracy70.31%,68.92%,63.89%
+and macro recall70.83%,66.46%,58.65% fail95% gates. Matching primitive-decoder
+plus graph-rule baseline scores100%. Direct-query and paired binding robustness
+also degrade on new structures. This is a failed generalization pilot, not a
+successful learned-language claim. Record pilot_passed=false; no model retuning.
+New-name aggregates include known structures and are not the primary holdout.
+
+Seven focused and143 full tests pass at9eeeb7ad143a552e39d92b81efb9196cafb3bc45,
+run37760159484, along with existing query/binding/alignment/composition workflows.
+A real empty intervention subset previously crashed metrics in run37759791443;
+regression-tested fix now records zero support/null scores. Architecture,
+training, split and research gates remain unchanged. CPU2thread audit127.054s.
+Query wrapper makes181bytes/query versus43byte symbolic gold representation;
+graph bytes repeat per question and no compression benefit is claimed.
+
+Full report: antlab/runs/learned-composition-query-report-20261008.json.
+Results/limitations: docs/research/2026-10-08-learned-composition-query-results.md.
+Local staged/tracked scans inspect31 explicit AVL research files each: no new
+learned-query findings or binary skips. The sole earlier alignment Python
+matrix-operator false email match remains manually reviewed; whole scans still
+return blocked=true, not a clean pass. Synthetic fixtures only; ACT/private
+content excluded. Main/default inference unchanged; existing draft PR updated.
+These joint results are now observed and must be disclosed if reused.
