@@ -4,6 +4,25 @@ Entries record implemented behavior, measured evidence, limitations and next
 questions. Use synthetic examples only. Never copy user conversations, account
 identifiers, personal paths, credentials or raw exception logs into this log.
 
+## 2026-10-08
+
+Implemented and executed the separately supervised two-subject spatial binding
+pilot. All3 seeds passed within-checkpoint accuracy, macro recall and paired
+meaning-change gates at100%; the separately trained constant-input receiver
+scored25%. Independent checkpoint cross-play averaged18.75% across6 pairs.
+This is bounded four-relation learning with a designed name-to-slot adapter:
+only16 unique canonical training strings. Repeated identity pairs do not count
+as new semantic structures. Joint vector packets plus literal tables cost2.24x
+the text reference and6x the one-byte gold oracle. No efficiency or universal
+compatibility gain is claimed.
+
+Validation:128 repository tests and8 focused tests passed in
+[run37720958084](https://github.com/knox9014/AVL/actions/runs/37720958084).
+[Protocol](AVL_BINDING_PILOT_PROTOCOL.md),
+[results and durable evidence](research/2026-10-08-binding-pilot-results.md).
+Original inference remains unchanged. Next: explicitly supervised codebook
+alignment/sample-efficiency, then richer canonical structures.
+
 ## 2026-10-07
 
 Named literal extension: added optional AVN1 packets with explicit identifiers
