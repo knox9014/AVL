@@ -1,0 +1,29 @@
+name: AVL language core
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/language_core.py'
+      - 'antlab/tests/test_language_core.py'
+      - '.github/workflows/language-core.yml'
+permissions:
+  contents: read
+jobs:
+  language-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Language contracts and independent oracle
+        run: python -m unittest antlab.tests.test_language_core -v
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Run language example
+        run: python -m antlab.language_core --names a b c --source "assert a left b; assert b left c; ask a left c;"
