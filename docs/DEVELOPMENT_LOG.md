@@ -115,3 +115,23 @@ latency. Connection scaling and general intelligence remain tested hypotheses.
 
 한국어: 개발 과정은 합성 입력·측정 결과·한계·다음 연구 질문 중심으로
 기록합니다. 사용자의 대화와 개인정보는 공개 기록에 옮기지 않습니다.
+
+
+## 2026-10-08: frozen binding-space calibration
+
+Preregistered 54 trials across six model pairs, three calibration sizes and three
+selection seeds. All declared16-example gates passed; eight examples descriptively
+reached100% on every partition. Four-example bridge joint mean99.31%, minimum87.5%.
+Fresh label classifiers also reach100% at8/16; no bridge superiority is established.
+Wrong-pair and wrong-label controls score0% at8/16. The task retains only four known
+classes and16 canonical training strings. Reproduced checkpoint file hashes differ
+from the original run; tensor identity has not been established. Weights remained
+frozen throughout calibration. No default inference or network expansion.
+
+Run37724409724 at441ccba1508116a5e46f4bed99824933dff8ced2 passed2 focused and130 full tests;
+existing query and binding workflows also passed this head. Durable summary and
+results: docs/research/2026-10-08-alignment-pilot-results.md. Synthetic-only review.
+Local tracked-content scan inspected15 AVL files and flagged one false email match
+at semantic_alignment_pilot.py:39: Python matrix multiplication design.T@y.double().
+Manual source review confirms operators/identifiers, not an email or private data.
+The text-pattern scanner itself did not return a clean pass. ACT content excluded.
