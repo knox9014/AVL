@@ -33,7 +33,8 @@ class BindingPilotTests(unittest.TestCase):
         self.assertTrue(torch.isfinite(vectors).all())
         logits=model.receive(wire_vectors(vectors))
         self.assertEqual(logits.shape,(8,4))
-        loss=torch.nn.functional.cross_entropy(logits,torch.tensor([r['target'] for r in data['train'][:8]]))
+        self.assertTrue(torch.equal(logits,model.receive(vectors)))
+        loss=torch.nn.functional.cross_entropy(model.receive(vectors),torch.tensor([r['target'] for r in data['train'][:8]]))
         loss.backward()
         self.assertGreater(float(model.embedding.weight.grad.abs().sum()),0.)
 
