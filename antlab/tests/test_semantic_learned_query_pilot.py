@@ -2,7 +2,7 @@ import unittest
 import torch
 from antlab.semantic_composition_pilot import pack_message
 from antlab.semantic_learned_query_pilot import (pack_query, unpack_query, features,
-                                               QueryReceiver, rule_predict, balanced_indices)
+                                               QueryReceiver, rule_predict, balanced_indices, score_queries)
 
 class LearnedQueryReceiverTests(unittest.TestCase):
     def graph(self):
@@ -36,6 +36,14 @@ class LearnedQueryReceiverTests(unittest.TestCase):
             model(torch.zeros(1,49))
         with self.assertRaises(ValueError):
             model(torch.full((1,50),float('nan')))
+
+    def test_empty_intervention_subset_is_not_a_perfect_score(self):
+        metrics=score_queries([dict(target=0,kind='direct'),dict(target=4,kind='path')],[0,4])
+        self.assertEqual(metrics['all']['accuracy'],1)
+        self.assertEqual(metrics['positive_path']['records'],0)
+        self.assertIsNone(metrics['positive_path']['accuracy'])
+        self.assertEqual(metrics['positive_path']['support'],[0]*5)
+        self.assertEqual(metrics['positive_path']['observed_classes'],[])
 
     def test_rule_control_and_balanced_sampling(self):
         class ConstantLeft:
