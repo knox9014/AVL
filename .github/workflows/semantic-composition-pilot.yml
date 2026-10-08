@@ -1,0 +1,41 @@
+name: AVL composition pilot
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/semantic_composition*.py'
+      - 'antlab/tests/test_semantic_composition*.py'
+      - 'docs/AVL_COMPOSITION_PILOT_PROTOCOL.md'
+      - '.github/workflows/semantic-composition-pilot.yml'
+permissions:
+  contents: read
+jobs:
+  composition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Composition tests
+        run: python -m unittest antlab.tests.test_semantic_composition_data antlab.tests.test_semantic_composition_pilot
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Reproduce frozen primitive checkpoints
+        run: python -m antlab.semantic_binding_pilot --output binding-reproduction
+      - name: Audit composition messages
+        run: python -m antlab.semantic_composition_pilot --study binding-reproduction --output composition-output
+      - name: Preserve synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avl-composition-pilot
+          path: |
+            binding-reproduction/
+            composition-output/
+          retention-days: 30
