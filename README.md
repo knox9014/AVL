@@ -60,3 +60,14 @@ The historical Python module name antlab is retained for recorded hashes. AVL is
 Examples are synthetic. Published checkpoints contain tensors and experiment metadata. Private conversations, credentials and local user configuration are excluded from this export.
 
 Apache-2.0. See [LICENSE](LICENSE).
+
+
+## Experimental chain-query interface
+
+[AVL chain-query guide](docs/AVL_CHAIN_QUERY_GUIDE.md) defines the finite relation
+semantics, bounded three/four-entity packet formats and label-free query API.
+The shared learned operator reuses a supervised relation decoder and designed
+routing/inverse channels. [Transfer results](docs/research/2026-10-08-shared-operator-results.md)
+record the preregistered four-node experiment, controls and limitations.
+The interface does not establish novel concept learning, model negotiation or
+communication savings; the original default inference remains unchanged.
