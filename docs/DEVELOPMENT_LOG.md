@@ -135,3 +135,33 @@ Local tracked-content scan inspected15 AVL files and flagged one false email mat
 at semantic_alignment_pilot.py:39: Python matrix multiplication design.T@y.double().
 Manual source review confirms operators/identifiers, not an email or private data.
 The text-pattern scanner itself did not return a clean pass. ACT content excluded.
+
+
+## 2026-10-08: three-entity designed composition transport
+
+Added experimental AVC1 envelope with three explicit names, two endpoint pairs
+and two frozen learned AVL1 relation vectors. Preregistered four partitions and
+interventions before implementation. All three matched checkpoints reconstruct
+both edges at100% on all final partitions; invariant descriptions/table/clause
+order and inverse-relation replacement pass100%. Eligible vector swaps follow
+new meaning at100% and retain original meaning0%.136 full tests and6 focused
+tests pass at ca3871a3be52801d8de53b9c92718f6106f57227,
+run37733118560. Existing query/binding/alignment workflows pass the same head.
+
+No neural model trains on multi-clause fixtures: segmentation/topology and the
+derived transitivity rule are designed. All joint derived queries have only
+undetermined support. Do not interpret heldout-fixture results as learned
+composition or reasoning. Newly reproduced checkpoint file hashes differ from
+prior runs; frozen tensor-state hashes are verified within this run.
+Messages171bytes are2.1783x final text-plus-table and5.1818x symbolic gold
+representation. No compression or model-independent compatibility is established.
+
+Complete report including confusion matrices and source/data/model hashes:
+antlab/runs/composition-pilot-report-20261008.json.
+Results/usage/limitations: docs/research/2026-10-08-composition-pilot-results.md.
+Local staged and tracked scans inspect23 AVL files each; no new composition
+findings or binary skips. The earlier alignment Python matrix operator at
+semantic_alignment_pilot.py:39 remains the sole email-pattern false positive,
+manually reviewed; whole scans still return blocked=true, not a clean pass.
+All source fixtures are synthetic; no ACT content or private conversations.
+Default AVL1 inference and main are preserved.
