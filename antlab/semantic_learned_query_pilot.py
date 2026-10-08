@@ -59,7 +59,7 @@ class QueryReceiver(nn.Module):
 def balanced_indices(targets,generator,batch):
     if targets.ndim!=1 or targets.dtype!=torch.long or not len(targets) or batch<=0:
         raise ValueError('invalid balanced sampler inputs')
-    if any(int(v) not in range(5) for v in targets):
+    if torch.any((targets<0)|(targets>4)):
         raise ValueError('invalid target class')
     groups=[torch.where(targets==i)[0] for i in range(5)]
     if any(not len(g) for g in groups):
