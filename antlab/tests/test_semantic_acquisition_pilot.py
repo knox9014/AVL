@@ -1,9 +1,16 @@
 import unittest
 import torch
-from antlab.semantic_acquisition_pilot import new_receiver,train_receiver,fingerprint
+from antlab.semantic_acquisition_pilot import new_receiver,train_receiver,fingerprint,compact_report,expand_report
 
 
 class AcquisitionPilotTests(unittest.TestCase):
+    def test_metric_dictionary_roundtrip(self):
+        metric=dict(accuracy=1.,macro_recall=1.,support=[1]*4,recall=[1.]*4,confusion=[[int(i==j) for j in range(4)] for i in range(4)])
+        report=dict(format='original',values=[metric,metric])
+        packed=compact_report(report)
+        self.assertEqual(len(packed['metric_dictionary']),1)
+        self.assertEqual(expand_report(packed),report)
+
     def test_fresh_same_width_initialization(self):
         a=new_receiver(16,401); b=new_receiver(16,401)
         self.assertTrue(all(torch.equal(x,y) for x,y in zip(a.parameters(),b.parameters())))
