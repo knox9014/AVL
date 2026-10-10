@@ -1,0 +1,80 @@
+{
+  "format": "avl-binding-design-enumeration-v1",
+  "status": "design_only_not_model_evaluation",
+  "counts": {
+    "train": {
+      "pairs": 90,
+      "templates": 2,
+      "records": 2880,
+      "target_support": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    },
+    "validation_surface": {
+      "pairs": 90,
+      "templates": 1,
+      "records": 1440,
+      "target_support": [
+        360,
+        360,
+        360,
+        360
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    },
+    "pair_holdout": {
+      "pairs": 30,
+      "templates": 2,
+      "records": 960,
+      "target_support": [
+        240,
+        240,
+        240,
+        240
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    },
+    "joint_pair_surface": {
+      "pairs": 30,
+      "templates": 1,
+      "records": 480,
+      "target_support": [
+        120,
+        120,
+        120,
+        120
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    },
+    "new_entities": {
+      "pairs": 28,
+      "templates": 1,
+      "records": 448,
+      "target_support": [
+        112,
+        112,
+        112,
+        112
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    },
+    "seen_pair_new_surface": {
+      "pairs": 90,
+      "templates": 1,
+      "records": 1440,
+      "target_support": [
+        360,
+        360,
+        360,
+        360
+      ],
+      "metadata_only_bayes_accuracy": 0.25
+    }
+  },
+  "semantic_group_key": "unordered identity pair + physical relation; inverse paraphrases kept together",
+  "caveat": "Counts checked by loop enumeration; no dataset generator, hashes, training, or model success yet."
+}

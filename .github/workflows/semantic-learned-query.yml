@@ -1,0 +1,41 @@
+name: AVL learned composition query
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/semantic_learned_query*.py'
+      - 'antlab/tests/test_semantic_learned_query*.py'
+      - 'docs/AVL_LEARNED_COMPOSITION_QUERY_PROTOCOL.md'
+      - '.github/workflows/semantic-learned-query.yml'
+permissions:
+  contents: read
+jobs:
+  learned-query:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Learned query tests
+        run: python -m unittest antlab.tests.test_semantic_learned_query_data antlab.tests.test_semantic_learned_query_pilot
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Reproduce frozen primitive checkpoints
+        run: python -m antlab.semantic_binding_pilot --output binding-reproduction
+      - name: Train and audit fixed query receivers
+        run: python -m antlab.semantic_learned_query_pilot --study binding-reproduction --output learned-query-output
+      - name: Preserve synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avl-learned-query-pilot
+          path: |
+            binding-reproduction/
+            learned-query-output/
+          retention-days: 30

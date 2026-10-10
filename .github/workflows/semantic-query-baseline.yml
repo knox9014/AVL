@@ -1,0 +1,75 @@
+name: Semantic query baseline
+on:
+  pull_request:
+    paths:
+      - 'antlab/semantic_named_values.py'
+      - 'antlab/semantic_named_values_audit.py'
+      - 'antlab/tests/test_semantic_named_values.py'
+      - 'docs/AVL_NAMED_VALUES_PROTOCOL.md'
+      - 'antlab/semantic_queries.py'
+      - 'antlab/semantic_query_pilot.py'
+      - 'antlab/semantic_query_operators.py'
+      - 'antlab/tests/test_semantic_query_operators.py'
+      - 'docs/AVL_QUERY_PILOT_V3_PROTOCOL.md'
+      - 'antlab/semantic_query_features.py'
+      - 'antlab/tests/test_semantic_query_features.py'
+      - 'docs/AVL_QUERY_PILOT_V2_PROTOCOL.md'
+      - 'antlab/tests/test_semantic_query_pilot.py'
+      - 'docs/AVL_QUERY_PILOT_PROTOCOL.md'
+      - 'antlab/semantic_render.py'
+      - 'antlab/semantic_v2_data.py'
+      - 'antlab/tests/test_semantic_queries.py'
+      - '.github/workflows/semantic-query-baseline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  query-fixtures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check query semantics and renderer compatibility
+        run: python -m unittest antlab.tests.test_semantic_queries antlab.tests.test_semantic_render antlab.tests.test_semantic_v2_data
+  frozen-vector-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Run full repository regression suite
+        run: python -m unittest discover -s antlab/tests
+      - name: Run declared three-seed query pilot
+        run: python -m antlab.semantic_query_pilot --output query-pilot-output
+      - name: Run matched feature-reuse study
+        run: python -m antlab.semantic_query_features --output query-features-output
+      - name: Run factorized learned-operator experiment
+        run: python -m antlab.semantic_query_operators --output query-operators-output
+      - name: Audit named entities and exact integers
+        run: python -m antlab.semantic_named_values_audit --operators query-operators-output --output named-values-output
+      - name: Retain synthetic pilot report and receiver weights
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frozen-vector-query-pilot
+          path: |
+            query-pilot-output/
+            query-features-output/
+            query-operators-output/
+            named-values-output/
+          retention-days: 30
+          if-no-files-found: warn

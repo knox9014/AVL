@@ -1,0 +1,41 @@
+name: AVL shared relation operator
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/semantic_shared_operator*.py'
+      - 'antlab/tests/test_semantic_shared_operator*.py'
+      - 'docs/AVL_SHARED_OPERATOR_PROTOCOL.md'
+      - '.github/workflows/semantic-shared-operator.yml'
+permissions:
+  contents: read
+jobs:
+  shared-operator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Shared operator tests
+        run: python -m unittest antlab.tests.test_semantic_shared_operator_data antlab.tests.test_semantic_shared_operator_pilot
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Reproduce frozen primitives
+        run: python -m antlab.semantic_binding_pilot --output binding-reproduction
+      - name: Train and audit shared operators
+        run: python -m antlab.semantic_shared_operator_pilot --study binding-reproduction --output shared-operator-output
+      - name: Preserve synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avl-shared-operator-pilot
+          path: |
+            binding-reproduction/
+            shared-operator-output/
+          retention-days: 30
