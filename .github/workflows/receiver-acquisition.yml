@@ -1,0 +1,36 @@
+name: AVL receiver acquisition
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'antlab/semantic_acquisition*.py'
+      - 'antlab/tests/test_semantic_acquisition*.py'
+      - '.github/workflows/receiver-acquisition.yml'
+permissions:
+  contents: read
+jobs:
+  receiver-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed CPU runtime
+        run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Acquisition tests
+        run: python -m unittest antlab.tests.test_semantic_acquisition_data antlab.tests.test_semantic_acquisition_pilot -v
+      - name: Full regression
+        run: python -m unittest discover -s antlab/tests
+      - name: Reproduce senders and train fresh receivers
+        run: python -m antlab.semantic_acquisition_pilot --output receiver-acquisition-output
+      - name: Preserve synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avl-receiver-acquisition
+          path: receiver-acquisition-output/
+          retention-days: 30
